@@ -43,7 +43,7 @@ public class Swimming : StateBase<PlayerController>
         player.CamControl.PivotOnPivot();
         player.CamControl.LAUTurning = false;
 
-        player.Stats.TryHideCanvas();
+        //player.Stats.TryHideCanvas();
     }
 
     public override void Update(PlayerController player)

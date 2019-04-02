@@ -36,7 +36,7 @@ public class Dead : StateBase<PlayerController>
     {
         if (Time.time - timeCounter >= 5f)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
