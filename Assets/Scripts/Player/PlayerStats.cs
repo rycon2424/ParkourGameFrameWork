@@ -26,7 +26,9 @@ public class PlayerStats : MonoBehaviour
 
     #region Private Fields
 
+    [SerializeField]
     private int health;
+    [SerializeField]
     private float breath;  // float because increments are affected by delta time and are small
 
     private PlayerController player;
