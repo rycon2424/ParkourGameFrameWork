@@ -9,7 +9,9 @@ public class TurretController : MonoBehaviour
     public Transform barrel;
     public GameObject Bullet;
     public bool activated;
-    public int raycastRange;
+    public float bulletInterval;
+    public float detectRange;
+    public float rotationSpeed;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class TurretController : MonoBehaviour
     
     void Update()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) < 25)
+        if (Vector3.Distance(transform.position, target.transform.position) < detectRange)
         {
             activated = true;
         }
@@ -37,7 +39,7 @@ public class TurretController : MonoBehaviour
     {
         var lookPos = target.position - transform.position;
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 1);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         Debug.DrawLine(this.transform.position, target.transform.position);
     }
 
@@ -53,9 +55,8 @@ public class TurretController : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(bulletInterval);
         Instantiate(Bullet, barrel.transform.position, barrel.transform.rotation);
-        yield return new WaitForSeconds(1f);
         canShoot = true;
     }
     

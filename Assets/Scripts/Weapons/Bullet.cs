@@ -32,8 +32,11 @@ public class Bullet : MonoBehaviour
         {
             Instantiate(concreteEffect, transform.position, concreteEffect.rotation);
         }
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("PlayerHIT");
+        }
         audioPlayer.clip = soundVariants[Random.Range(0, soundVariants.Length)];
-        Debug.Log(audioPlayer.clip);
         audioPlayer.Play();
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
