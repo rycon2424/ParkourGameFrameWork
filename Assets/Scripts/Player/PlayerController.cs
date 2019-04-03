@@ -104,6 +104,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         charControl = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         cam = camController.GetComponentInChildren<Camera>().transform;
