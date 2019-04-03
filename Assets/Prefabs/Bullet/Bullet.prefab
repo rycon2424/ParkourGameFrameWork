@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 40
+  damage: 20
   rb: {fileID: 5583232768393523296}
   dirtEffect: {fileID: 8972149297226604006, guid: 6d5e05b5b13b03944b4740d5879ffff7,
     type: 3}

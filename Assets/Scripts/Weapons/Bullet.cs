@@ -6,14 +6,18 @@ public class Bullet : MonoBehaviour
 {
 
     public float BulletSpeed;
+    public int damage;
     public Rigidbody rb;
     public Transform dirtEffect;
     public Transform concreteEffect;
     public AudioSource audioPlayer;
     public AudioClip[] soundVariants = new AudioClip[5];
 
+    private PlayerStats pc;
+
     void Start()
     {
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         Destroy(this.gameObject, 10);
     }
     
@@ -35,6 +39,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("PlayerHIT");
+            pc.Health -= damage;
         }
         audioPlayer.clip = soundVariants[Random.Range(0, soundVariants.Length)];
         audioPlayer.Play();
