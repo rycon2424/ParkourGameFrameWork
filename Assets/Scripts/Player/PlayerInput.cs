@@ -9,7 +9,8 @@ public class PlayerInput : MonoBehaviour
     public KeyCode action = KeyCode.E;
     public KeyCode jump = KeyCode.Space;
     public KeyCode walk = KeyCode.LeftAlt;
-    public KeyCode crouch = KeyCode.LeftShift;
+    public KeyCode sprint = KeyCode.LeftShift;
+    public KeyCode crouch = KeyCode.C;
     public KeyCode drawWeapon = KeyCode.Mouse1;
     public KeyCode fireWeapon = KeyCode.Mouse0;
     public KeyCode pls = KeyCode.F;
