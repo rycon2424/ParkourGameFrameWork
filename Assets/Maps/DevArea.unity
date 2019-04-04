@@ -12115,45 +12115,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
-    - target: {fileID: 7644888107416045693, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
-        type: 3}
-      propertyPath: camController
-      value: 
-      objectReference: {fileID: 494403067}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.23
+      value: -6.707865
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.04
+      value: 1.4559892
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.98
+      value: -20.543446
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.00021967867
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.99977565
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.014255158
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.015664896
       objectReference: {fileID: 0}
     - target: {fileID: 7644888108168252931, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
@@ -12175,6 +12170,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7644888107416045693, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
+        type: 3}
+      propertyPath: camController
+      value: 
+      objectReference: {fileID: 494403067}
     - target: {fileID: 7644888107416045692, guid: 5129dbfbe71857c4c82e454f2c0dbce0,
         type: 3}
       propertyPath: HUDManager
