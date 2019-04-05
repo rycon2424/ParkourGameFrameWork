@@ -13429,7 +13429,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle_to_Crouch
-  m_Speed: 1.26
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101165369182873990}
@@ -14129,7 +14129,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Crouch_to_Idle
-  m_Speed: 1.26
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101289215538036540}
