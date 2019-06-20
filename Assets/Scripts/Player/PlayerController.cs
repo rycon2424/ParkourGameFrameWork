@@ -112,7 +112,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         playerSFX = GetComponent<PlayerSFX>();
         playerStats = GetComponent<PlayerStats>();
-        weaponManager = GetComponent<WeaponManager>();
 
         stateMachine = new StateMachine<PlayerController>(this);
         upperStateMachine = new StateMachine<PlayerController>(this);

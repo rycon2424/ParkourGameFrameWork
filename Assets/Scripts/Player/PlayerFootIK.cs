@@ -22,6 +22,11 @@ public class PlayerFootIK : MonoBehaviour
         player = GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
 
+        Invoke("SetIK", 1);
+    }
+
+    void SetIK()
+    {
         player.Stats.OnDeath += DisableIK;
     }
 

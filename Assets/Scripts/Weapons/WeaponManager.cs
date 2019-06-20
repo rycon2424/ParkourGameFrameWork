@@ -37,16 +37,7 @@ public class WeaponManager : MonoBehaviour
 
         currentWeapon = weapon;
     }
-
-    public void FireRWeapon()
-    {
-        currentWeapon.rHand.Fire(GetTargetPosition());
-    }
-
-    public void FireLWeapon()
-    {
-        currentWeapon.lHand.Fire(GetTargetPosition());
-    }
+    
 
     private Vector3 GetTargetPosition()
     {

@@ -61,7 +61,6 @@ public class InAir : StateBase<PlayerController>
 
                 // Stops any screaming currently happening
                 player.GetComponent<AudioSource>().Stop();
-                Debug.Log("stop");
 
                 if (player.Stats.Health == 0)
                 {
