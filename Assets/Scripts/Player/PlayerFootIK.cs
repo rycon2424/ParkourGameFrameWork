@@ -7,6 +7,7 @@ public class PlayerFootIK : MonoBehaviour
 {
     [SerializeField]
     private float footOffset = 0.1f;
+    public float sphereCastRange;
 
     private bool useIK = true;
 
@@ -60,7 +61,7 @@ public class PlayerFootIK : MonoBehaviour
         Transform footT = anim.GetBoneTransform(foot);
 
         RaycastHit hit;
-        if (Physics.Raycast(footT.position, Vector3.down, out hit, 1.5f))
+        if (Physics.SphereCast(footT.position,sphereCastRange, Vector3.down, out hit, 1.5f))
         {
             position = hit.point;
             rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
