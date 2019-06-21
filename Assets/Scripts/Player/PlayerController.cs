@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private PlayerStats playerStats;
     private PlayerSFX playerSFX;
-    private WeaponManager weaponManager;
     private Transform waistTarget;
     private Quaternion waistRotation;
     private Vector3 headLookAt;
@@ -140,7 +139,6 @@ public class PlayerController : MonoBehaviour
         stateMachine.AddState(new Sliding());
 
         upperStateMachine.AddState(new Empty());
-        upperStateMachine.AddState(new UpperCombat());
 
         stateMachine.GoToState<Locomotion>();
         upperStateMachine.GoToState<Empty>();
@@ -148,16 +146,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (RingMenu.isPaused)
-        {
-            anim.speed = 0f;
-            return;
-        }
-        else
-        {
-            anim.speed = 1f;
-        }
-
         CheckForGround();
 
         if (useGravity)
@@ -639,12 +627,7 @@ public class PlayerController : MonoBehaviour
     {
         get { return playerStats; }
     }
-
-    public WeaponManager Weapons
-    {
-        get { return weaponManager; }
-    }
-
+    
     public GroundInfo Ground
     {
         get { return groundInfo; }

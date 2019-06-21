@@ -8,9 +8,7 @@ public class EnemyController : MonoBehaviour
     public int startHealth = 100;
     public float angleOfView = 84f;
     public float maxAimDistance = 12f;
-
-    public Weapon weapon;
-
+    
     private int health;
     private bool isAlive = true;
     private float dotValue = 0f;
@@ -67,12 +65,7 @@ public class EnemyController : MonoBehaviour
             stateMachine.GoToState<AIEngaged>();
         }
     }
-
-    public void FireWeapon()
-    {
-        weapon.Fire(target.transform.position + Vector3.up * 1f);
-    }
-
+    
     public int Health
     {
         get { return health; }

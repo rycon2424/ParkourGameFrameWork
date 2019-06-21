@@ -92,15 +92,6 @@ public class Locomotion : StateBase<PlayerController>
             player.StateMachine.GoToState<Sliding>();
             return;
         }
-        else if (Input.GetKey(player.Inputf.drawWeapon) || Input.GetAxisRaw("CombatTrigger") > 0.1f)
-        {
-            if (player.Weapons.currentWeapon != null)
-            {
-                player.StateMachine.GoToState<Combat>();
-                player.UpperStateMachine.GoToState<UpperCombat>();
-                return;
-            }
-        }
 
         if (isStairs = (player.Ground.Distance < 1f && player.Ground.Tag == "Stairs"))
         {

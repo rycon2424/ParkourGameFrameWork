@@ -76,9 +76,7 @@ public class LedgeDetector
         RaycastHit hHit;
         if (!Physics.Raycast(start, dir, out hHit, maxDistance, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
-
-        bool isMoving = hHit.collider.CompareTag("MovingPlatform");
-
+        
         if (hHit.collider.CompareTag("Freeclimb"))
         {
             ledgeInfo = new LedgeInfo(LedgeType.Free, new Vector3(hHit.point.x, start.y, hHit.point.z), -hHit.normal, hHit.collider);

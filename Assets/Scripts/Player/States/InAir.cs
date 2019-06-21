@@ -92,14 +92,9 @@ public class InAir : StateBase<PlayerController>
         }
         else if (!player.Anim.GetBool("isDive"))  // Other actions that be performed while not diving
         { 
-            if (Input.GetKeyDown(player.Inputf.action) && !player.UpperStateMachine.IsInState<UpperCombat>())
+            if (Input.GetKeyDown(player.Inputf.action))
             {
                 player.StateMachine.GoToState<Grabbing>();
-            }
-            else if (Input.GetKey(player.Inputf.drawWeapon) || Input.GetAxisRaw("CombatTrigger") > 0.1f)
-            {
-                if (player.VerticalSpeed > -player.DamageVelocity)
-                    player.UpperStateMachine.GoToState<UpperCombat>();
             }
         }
     }

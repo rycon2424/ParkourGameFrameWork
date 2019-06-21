@@ -62,9 +62,7 @@ public static class UMath
         Vector3 dir = relative;
         dir.y = 0f;
         dir.Normalize();
-
-        float horDist = GetHorizontalMag(relative);
-
+        
         time = GetHorizontalMag(relative) / horVel;
 
         float u = (relative.y - (0.5f * (-gravity) * Mathf.Pow(time, 2))) / time;

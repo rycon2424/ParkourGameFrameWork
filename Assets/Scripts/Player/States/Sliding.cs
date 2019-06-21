@@ -35,12 +35,6 @@ public class Sliding : StateBase<PlayerController>
             return;
         }
 
-        if (Input.GetKeyDown(player.Inputf.drawWeapon) || Input.GetAxisRaw("CombatTrigger") > 0.1f)
-        {
-            if (!player.UpperStateMachine.IsInState<UpperCombat>())
-                player.UpperStateMachine.GoToState<UpperCombat>();
-        }
-
         slopeDirection.y = 0;  // Don't add to gravity
 
         player.MoveInDirection(player.SlideSpeed, slopeDirection);

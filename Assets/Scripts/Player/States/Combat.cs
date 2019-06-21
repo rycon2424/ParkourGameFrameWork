@@ -78,6 +78,6 @@ public class Combat : StateBase<PlayerController>
             }
         }
 
-        player.CamControl.State = (player.Weapons.target == null ? CameraState.Grounded : CameraState.Combat);
+        player.CamControl.State = CameraState.Grounded;
     }
 }
