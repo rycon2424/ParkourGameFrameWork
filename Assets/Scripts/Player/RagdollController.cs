@@ -38,11 +38,7 @@ public class RagdollController : MonoBehaviour
 
     public void DisableRagdoll()
     {
-        if (player.Anim == null)
-        {
-            Debug.Log("Ignore");
-        }
-        else
+        if (player.Anim != null)
         {
             player.Anim.enabled = true;
         }

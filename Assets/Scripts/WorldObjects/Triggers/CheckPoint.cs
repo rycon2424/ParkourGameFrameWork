@@ -7,8 +7,10 @@ public class CheckPoint : MonoBehaviour
 
     public static Vector3 checkpoint; //SingleTon
 
-    public Transform player;
-    public AudioSource checkpointSound;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private AudioSource checkpointSound;
 
     [SerializeField]
     private Animator anim;
@@ -16,6 +18,8 @@ public class CheckPoint : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        checkpointSound = GetComponent<AudioSource>();
+        player = GameObject.FindObjectOfType<PlayerController>().transform;
         if (checkpoint.x == 0 && checkpoint.y == 0 && checkpoint.z == 0)
         {
             Debug.Log("No CheckPoints Yet");
