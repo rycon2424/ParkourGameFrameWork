@@ -122,8 +122,6 @@ public class PlayerController : MonoBehaviour
     {
         stateMachine.AddState(new Empty());
         stateMachine.AddState(new Locomotion());
-        stateMachine.AddState(new Combat());
-        stateMachine.AddState(new CombatJumping());
         stateMachine.AddState(new Climbing());
         stateMachine.AddState(new Freeclimb());
         stateMachine.AddState(new Drainpipe());
