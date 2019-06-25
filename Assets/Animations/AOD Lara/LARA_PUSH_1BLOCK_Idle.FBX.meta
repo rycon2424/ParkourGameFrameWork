@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ace083703bd82b4ab606fa2f944db92
+guid: f57312e6a26473f4d93bd67a4264b69e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -129,9 +129,8 @@ ModelImporter:
     400120: THUMB2_R
     400122: TOE_L
     400124: TOE_R
-    7400000: LARA_PULL_BLOCK_FULL
+    7400000: LARA_PUSH_1BLOCK_Idle
     9500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -145,14 +144,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'SHLDER_L'
-      : position error = 9.274403 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'LARA_PULL_BLOCK_FULL' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'SHLDER_L' has translation animation that
-      will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -166,24 +160,24 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LARA_PULL_BLOCK_FULL
-      takeName: LARA_PULL_BLOCK_FULL
-      firstFrame: 1
-      lastFrame: 79
+      name: LARA_PUSH_1BLOCK_Idle
+      takeName: LARA_PUSH_1BLOCK
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
+      loopTime: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

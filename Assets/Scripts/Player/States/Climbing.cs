@@ -48,7 +48,6 @@ public class Climbing : StateBase<PlayerController>
         AnimatorTransitionInfo transInfo = player.Anim.GetAnimatorTransitionInfo(0);
 
         right = Input.GetAxisRaw(player.Inputf.horizontalAxis);
-
         if (isInCornering || isOutCornering)
         {
             if (animState.IsName("InCornerLeft") || animState.IsName("CornerLeft")
