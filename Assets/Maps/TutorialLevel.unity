@@ -32416,8 +32416,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659832280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.243763, y: 0.16265678, z: 155.98802}
+  m_LocalRotation: {x: -0, y: -0.28348783, z: -0, w: -0.95897585}
+  m_LocalPosition: {x: 389.81647, y: 0.16265869, z: 340.8257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445312257}
@@ -32427,7 +32427,7 @@ Transform:
   - {fileID: 410937000}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -327.063, z: 0}
 --- !u!1001 &1660919810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41266,5 +41266,29 @@ PrefabInstance:
       propertyPath: lookObj
       value: 
       objectReference: {fileID: 832411411}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.00030136108
+      objectReference: {fileID: 0}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.014788866
+      objectReference: {fileID: 0}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.027637452
+      objectReference: {fileID: 0}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.03238616
+      objectReference: {fileID: 0}
+    - target: {fileID: 936416974, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.031099312
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b715802960b8ce42b882b414b2a2b61, type: 3}
