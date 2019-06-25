@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float treadSpeed = 1.2f;
     [SerializeField] private float slideSpeed = 5f;
     [SerializeField] private float speedChangeRate = 8f;
+    [SerializeField] private float oldRadius;
 
     [Header("Damage Rates")]
     [SerializeField] private float breathLossRate = 2f;
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         charControl = GetComponent<CharacterController>();
+        oldRadius = CharControl.radius;
         playerInput = GetComponent<PlayerInput>();
         cam = camController.GetComponentInChildren<Camera>().transform;
         anim = GetComponent<Animator>();
@@ -546,7 +548,7 @@ public class PlayerController : MonoBehaviour
 
     public void MaximizeCollider()
     {
-        charControl.radius = 0.2f;
+        charControl.radius = oldRadius;
     }
 
     public void DisableCharControl()

@@ -523,7 +523,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 605e8c4a6c850454c8a6e78195c4f352, type: 3}
+    m_Motion: {fileID: 7400000, guid: b8915d33b5b1dfa45b4cdbcce1cbf9de, type: 3}
     m_Threshold: 1.345
     m_Position: {x: 0, y: 1.345}
     m_TimeScale: 1.25
@@ -531,7 +531,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e5a344430829cee4d94a6cdf822dcd2a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 82c8c2dd6f09b7e4f9faa104a191d367, type: 3}
     m_Threshold: 3.49
     m_Position: {x: 0, y: 3.49}
     m_TimeScale: 1.25
@@ -3747,7 +3747,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isCombat
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102541818394168380}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -4006,7 +4006,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isCombat
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102541818394168380}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -4865,7 +4865,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isFiring
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102321863173540966}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 1
   m_IsExit: 0
@@ -10019,7 +10019,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isCombat
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102541818394168380}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -10097,7 +10097,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isFiring
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102321863173540966}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 1
   m_IsExit: 0
@@ -10197,7 +10197,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isFiring
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102321863173540966}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 1
   m_IsExit: 0
@@ -11335,7 +11335,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ec83b63618071894dba55bb4183450c0, type: 3}
+  m_Motion: {fileID: 7400000, guid: 31980fcbbe83b5049b83ccc8341b71c9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
