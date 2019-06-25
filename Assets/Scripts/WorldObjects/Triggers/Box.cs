@@ -7,9 +7,10 @@ public class Box : MonoBehaviour
 
     private PlayerController pc;
     private PlayerInput pi;
-    public Animator anim;
+    private Animator anim;
 
     public bool playerLocked = false;
+    public float playerOffset;
 
     void Start()
     {
@@ -32,19 +33,33 @@ public class Box : MonoBehaviour
             pc.enabled = true;
             playerLocked = false;
         }
+        Debug.Log(transform.position);
+        Debug.Log(transform.localPosition);
     }
 
     void OnTriggerStay(Collider col)
     {
-        if (Input.GetKeyDown(pi.action) && !playerLocked && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("EnterBox");
-            pc.RotateToTarget(transform.position);
-            transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
-            anim.SetFloat("Speed", 0);
-            anim.SetBool("PushBox", true);
-            pc.enabled = false;
-            Invoke("LockPlayer", 0.5f);
+            if (Input.GetKeyDown(pi.action) && !playerLocked && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                Debug.Log("EnterBox");
+                pc.RotateToTarget(transform.position);
+                transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.23f);
+                anim.SetFloat("Speed", 0);
+                anim.SetBool("PushBox", true);
+                pc.enabled = false;
+                Invoke("LockPlayer", 0.5f);
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+
         }
     }
 
