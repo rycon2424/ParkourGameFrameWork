@@ -12,8 +12,7 @@ public class PlayerInput : MonoBehaviour
     public KeyCode sprint = KeyCode.LeftShift;
     public KeyCode crouch = KeyCode.C;
     public KeyCode drawWeapon = KeyCode.Mouse1;
-    public KeyCode fireWeapon = KeyCode.Mouse0;
-    public KeyCode pls = KeyCode.F;
+    public KeyCode spotLight = KeyCode.F;
     public KeyCode inventory = KeyCode.Tab;
     public KeyCode pause = KeyCode.Escape;
 }

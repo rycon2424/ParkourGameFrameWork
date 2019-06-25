@@ -19,7 +19,7 @@ public class PlayerLight : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(player.Inputf.pls))
+        if (Input.GetKeyDown(player.Inputf.spotLight))
         {
             isOn = !isOn;
             spotLight.SetActive(isOn);

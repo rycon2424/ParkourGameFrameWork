@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float standJumpVel = 3.5f;
 
     [Header("Offsets")]
+    public float crouchHeight;
+    public float crouchCenter;
+
+    [Header("Offsets")]
     [SerializeField] private float grabForwardOffset = 0.11f;
     [SerializeField] private float grabUpOffset = 1.86f;
     [SerializeField] private float hangForwardOffset = 0.11f;

@@ -20,8 +20,8 @@ public class Crouch : StateBase<PlayerController>
         originalHeight = player.CharControl.height;
         originalCenter = player.CharControl.center;
 
-        player.CharControl.height = 0.6f;
-        player.CharControl.center = Vector3.up * 0.3f;
+        player.CharControl.height = player.crouchHeight;
+        player.CharControl.center = Vector3.up * player.crouchCenter;
         player.CamControl.PivotOnHip();
         player.CamControl.LAUTurning = true;
         player.UseRootMotion = true;
