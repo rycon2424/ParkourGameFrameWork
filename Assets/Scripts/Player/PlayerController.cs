@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         charControl = GetComponent<CharacterController>();
         oldRadius = CharControl.radius;
@@ -151,6 +152,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckForGround();
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Cursor.visible = !Cursor.visible;
+        }
 
         if (useGravity)
             ApplyGravity();

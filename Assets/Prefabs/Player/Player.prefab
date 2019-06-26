@@ -1041,8 +1041,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.00030231476, y: -0.014788985, z: -0.0000009536743}
-    m_Extent: {x: 0.027002681, y: 0.03181219, z: 0.030119998}
+    m_Center: {x: -0.00030136108, y: -0.014788628, z: 0}
+    m_Extent: {x: 0.022061253, y: 0.031617735, z: 0.029422961}
   m_DirtyAABB: 0
 --- !u!1 &4573776429283703512
 GameObject:
