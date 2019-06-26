@@ -15,6 +15,7 @@ TagManager:
   - MovingPlatform
   - Dirt
   - Concrete
+  - Box
   layers:
   - Default
   - TransparentFX

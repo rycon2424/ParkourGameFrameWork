@@ -8,6 +8,7 @@ public class Cheats : MonoBehaviour
     public Transform[] checkpoints = new Transform[5];
 
     public Transform player;
+    public GameObject defaultDance;
     
     void Update()
     {
@@ -34,6 +35,28 @@ public class Cheats : MonoBehaviour
         if (Input.GetKey(KeyCode.Keypad6))
         {
             player.position = checkpoints[5].position;
+        }
+        if (Input.GetKey(KeyCode.Keypad7))
+        {
+            player.position = checkpoints[6].position;
+        }
+        if (Input.GetKey(KeyCode.Keypad8))
+        {
+            player.position = checkpoints[7].position;
+        }
+        if (Input.GetKey(KeyCode.Keypad9))
+        {
+            player.position = checkpoints[8].position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Instantiate(defaultDance, new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z), Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GameObject.FindObjectOfType<PlayerStats>().Health = 0;
         }
     }
 }
