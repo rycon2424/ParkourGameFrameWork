@@ -134,5 +134,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLocked: 0
   playerOffset: 0.24
-  distanceForward: 4
+  distanceForward: 3.5
   distanceBack: 1
+  hitTestRange: 1.66

@@ -4068,11 +4068,7 @@ MonoBehaviour:
   vaultSounds:
   - {fileID: 8300000, guid: fa0ae195afe5c0d499d13c92bfdc3b37, type: 3}
   screamSounds:
-  - {fileID: 8300000, guid: 41904dabec59bc34db84bff5d88a6fba, type: 3}
-  - {fileID: 8300000, guid: dd4d98fc0bf67ce44a5d66ab019ad749, type: 3}
-  - {fileID: 8300000, guid: d5863fc2661166a46a8b8f81d10dc82d, type: 3}
-  - {fileID: 8300000, guid: f8235e940c2476a43a776816fd1d901f, type: 3}
-  - {fileID: 8300000, guid: 46f4ce1707261614ea4582cb491d7ead, type: 3}
+  - {fileID: 8300000, guid: 28876acb8a22af84291aaae1695c4004, type: 3}
   slapSounds:
   - {fileID: 8300000, guid: 1585c3ee18da6964d8783093cadcff20, type: 3}
   hitGroundSounds:
