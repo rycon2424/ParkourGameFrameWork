@@ -29,12 +29,7 @@ public class Box : MonoBehaviour
         }
         if (Input.GetKeyDown(pi.action) && playerLocked)
         {
-            Debug.Log("ExitBox");
-            gameObject.layer = 0;
-            transform.parent = null;
-            anim.SetBool("PushBox", false);
-            pc.enabled = true;
-            playerLocked = false;
+            ExitBox();
         }
         if (Input.GetMouseButton(1))
         {
@@ -119,6 +114,21 @@ public class Box : MonoBehaviour
                 Invoke("LockPlayer", 0.5f);
             }
         }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        ExitBox();
+    }
+
+    public void ExitBox()
+    {
+        Debug.Log("ExitBox");
+        gameObject.layer = 0;
+        transform.parent = null;
+        anim.SetBool("PushBox", false);
+        pc.enabled = true;
+        playerLocked = false;
     }
 
     void LockPlayer()
