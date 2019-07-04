@@ -30,10 +30,15 @@ public class Box : MonoBehaviour
         if (Input.GetKeyDown(pi.action) && playerLocked)
         {
             Debug.Log("ExitBox");
+            gameObject.layer = 0;
             transform.parent = null;
             anim.SetBool("PushBox", false);
             pc.enabled = true;
             playerLocked = false;
+        }
+        if (Input.GetMouseButton(1))
+        {
+            CheckFace();
         }
     }
 
@@ -41,6 +46,26 @@ public class Box : MonoBehaviour
     public float distanceForward;
     RaycastHit hitBack;
     public float distanceBack;
+
+    [Header("Test")]
+    RaycastHit hitTest;
+    public float hitTestRange;
+
+    void CheckFace()
+    {
+        Vector3 playerHeight = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);
+        Debug.DrawRay(playerHeight, (transform.position - playerHeight).normalized * hitTestRange, Color.red);
+        Debug.Log("ShootRayCast");
+        if (Physics.Raycast(playerHeight, (transform.position - playerHeight).normalized, out hitTest, hitTestRange))
+        {
+            if (hitTest.collider.tag == "Box")
+            {
+                Debug.Log(hitTest.normal);
+                player.rotation = Quaternion.LookRotation(-hitTest.normal, Vector3.up);
+            }
+        }
+    }
+
 
     void CheckingRaycast()
     {
@@ -84,20 +109,16 @@ public class Box : MonoBehaviour
             if (Input.GetKeyDown(pi.action) && !playerLocked && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
                 Debug.Log("EnterBox");
-                pc.RotateToTarget(transform.position);
+                CheckFace();
                 transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.23f);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.24f);
                 anim.SetFloat("Speed", 0);
                 anim.SetBool("PushBox", true);
                 pc.enabled = false;
+                gameObject.layer = 2;
                 Invoke("LockPlayer", 0.5f);
             }
         }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-
     }
 
     void LockPlayer()
