@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Maps/TutorialLevel.unity
+    path: Assets/Maps/Main Hub.unity
     guid: cb001b8f61970104aa65adf21c1e8a31
   - enabled: 0
     path: Assets/Maps/DevArea.unity
