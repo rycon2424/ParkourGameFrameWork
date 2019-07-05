@@ -40,14 +40,6 @@ public class Cheats : MonoBehaviour
         {
             player.position = checkpoints[6].position;
         }
-        if (Input.GetKey(KeyCode.Keypad8))
-        {
-            player.position = checkpoints[7].position;
-        }
-        if (Input.GetKey(KeyCode.Keypad9))
-        {
-            player.position = checkpoints[8].position;
-        }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
