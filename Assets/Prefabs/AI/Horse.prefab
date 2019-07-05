@@ -997,7 +997,7 @@ MonoBehaviour:
   playerRiding: 0
   sprint: 0
   forcedRiding: 0
-  canJump: 0
+  canJump: 1
   speed: 2
   rotateSpeed: 100
   jumpHeight: 400
@@ -1063,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &728971947008358073
 Transform:
   m_ObjectHideFlags: 0
@@ -1761,7 +1761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &728971947008358121
 Transform:
   m_ObjectHideFlags: 0
