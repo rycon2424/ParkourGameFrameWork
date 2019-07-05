@@ -13,8 +13,6 @@ TagManager:
   - Slope
   - Stairs
   - MovingPlatform
-  - Dirt
-  - Concrete
   - Box
   layers:
   - Default
