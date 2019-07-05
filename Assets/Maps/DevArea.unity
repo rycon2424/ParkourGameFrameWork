@@ -11913,11 +11913,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1738406402}
-    - target: {fileID: 4997240181138895889, guid: e1a2fcb1d01f00e439bc33f8a0b5c767,
-        type: 3}
-      propertyPath: translationSmoothing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4997240181162793823, guid: e1a2fcb1d01f00e439bc33f8a0b5c767,
         type: 3}
       propertyPath: m_LocalPosition.x
