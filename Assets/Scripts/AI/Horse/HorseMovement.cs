@@ -15,6 +15,7 @@ public class HorseMovement : MonoBehaviour
     [Header("Horse Stats")]
     public float speed;
     public float rotateSpeed;
+    public float jumpHeight;
 
     private Animator anim;
     private GameObject player;
@@ -41,7 +42,7 @@ public class HorseMovement : MonoBehaviour
             anim.SetBool("Walk", false);
             if (Input.GetKeyDown(pi.jump) && canJump)
             {
-
+                Jump();
             }
         }
         else if (playerRiding)
@@ -51,7 +52,7 @@ public class HorseMovement : MonoBehaviour
 
         if (!canJump)
         {
-
+            CheckGround();
         }
     }
 
@@ -75,7 +76,7 @@ public class HorseMovement : MonoBehaviour
                 anim.SetBool("Walk", false);
                 if (Input.GetKeyDown(pi.jump) && canJump)
                 {
-
+                    Jump();
                 }
             }
             else
@@ -118,6 +119,14 @@ public class HorseMovement : MonoBehaviour
         }
     }
 
+    void Jump()
+    {
+        canJump = false;
+        anim.Play("Jump");
+        GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight);
+        Invoke("CanCheckForGround", 0.5f);
+    }
+
     void EnterHorse()
     {
         playerRiding = true;
@@ -149,4 +158,24 @@ public class HorseMovement : MonoBehaviour
         canExit = true;
     }
 
+    RaycastHit hit;
+    bool canCheck = false;
+    void CanCheckForGround()
+    {
+        canCheck = true;
+    }
+    void CheckGround()
+    {
+        Debug.DrawRay(transform.GetChild(2).position, -transform.up * 1.6f, Color.magenta);
+        if (Physics.Raycast(transform.GetChild(2).position, -transform.up, out hit, 1.6f) && canCheck == true)
+        {
+            if (hit.collider.tag != "")
+            {
+                Debug.Log("Ground");
+                canJump = true;
+                canCheck = false;
+            }
+        }
+    }
+    
 }
