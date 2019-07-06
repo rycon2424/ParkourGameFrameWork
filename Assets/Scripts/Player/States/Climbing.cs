@@ -209,7 +209,9 @@ public class Climbing : StateBase<PlayerController>
         for (int i = 0; i <= accuracy; i++)
         {
             Vector3 start = player.transform.position + (i * deltaHeight * Vector3.up);
-
+            //DEBUG
+            Debug.DrawRay(start, dir * 1f, Color.red);
+            //
             if (Physics.Raycast(start, dir, distance, ~(1 << 8)))
                 return BlockType.Inner;
         }
@@ -225,7 +227,9 @@ public class Climbing : StateBase<PlayerController>
         for (int i = 0; i <= accuracy; i++)
         {
             Vector3 start = player.transform.position + (i * deltaHeight * Vector3.up) + (dir * distance);
-
+            //DEBUG
+            Debug.DrawRay(start, player.transform.forward * 1f, Color.red, 1f);
+            //
             if (Physics.Raycast(start, player.transform.forward, distance, ~(1 << 8)))
                 return BlockType.NoClimb;
         }

@@ -86,6 +86,9 @@ class Freeclimb : StateBase<PlayerController>
         }
 
         Vector3 ledgeCheckStart = player.transform.position + 1.6f * Vector3.up;
+        //DEBUG
+        Debug.DrawRay(ledgeCheckStart, player.transform.forward * 1f, Color.red, 2);
+        //
         if (forward > 0.1f && !Physics.Raycast(ledgeCheckStart - player.transform.forward * 0.2f, player.transform.forward, 1f))
         {
             Vector3 tryClimbTo = ledgeCheckStart + player.transform.forward * player.CharControl.radius * 2f;
@@ -128,6 +131,9 @@ class Freeclimb : StateBase<PlayerController>
     private void StopClimbingIntoWalls(PlayerController player)
     {
         // Stops player climbing into roof
+        //DEBUG
+        Debug.DrawRay(player.transform.position, player.transform.up * 1f, Color.red);
+        //
         if (Physics.Raycast(player.transform.position + player.CharControl.height * Vector3.up, Vector3.up, 1f))
             forward = Mathf.Clamp(forward, -1f, 0f);
 
@@ -164,6 +170,10 @@ class Freeclimb : StateBase<PlayerController>
 
             if (normalLedge)
                 return CornerType.Continue;
+
+            //DEBUG
+            Debug.DrawRay(start, player.transform.forward * 1, Color.red, 0.2f);
+            //
 
             // Test for stopping cause end of freeclimb
             if (Physics.Raycast(start, player.transform.forward, 0.6f))

@@ -43,7 +43,10 @@ public class Crouch : StateBase<PlayerController>
     public override void Update(PlayerController player)
     {
         AnimatorStateInfo animState = player.Anim.GetCurrentAnimatorStateInfo(0);
-
+        //DEBUG
+        Vector3 PlayerVector = new Vector3(0, 1.8f, 0);
+        Debug.DrawRay(player.transform.position, PlayerVector, Color.red, 2);
+        //
         if (!Input.GetKey(player.Inputf.crouch))
         {
             if (!Physics.Raycast(player.transform.position, Vector3.up, 1.8f, ~(1 << 8), QueryTriggerInteraction.Ignore))

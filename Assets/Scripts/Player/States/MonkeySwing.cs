@@ -65,7 +65,10 @@ public class MonkeySwing : StateBase<PlayerController>
         if (Physics.Raycast(target, Vector3.up, out hit, player.HangUpOffset + 0.2f, ~(1 << 8), QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.CompareTag("MonkeySwing"))
-                return true;
+            //DEBUG
+            Debug.DrawRay(target, Vector3.up * hit.distance, Color.red, 2f);
+            //
+            return true;
         }
 
         return false;
