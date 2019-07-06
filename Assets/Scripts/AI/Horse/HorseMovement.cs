@@ -44,6 +44,16 @@ public class HorseMovement : MonoBehaviour
             {
                 Jump();
             }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Rotate(Vector3.up * (-rotateSpeed / 3) * Time.deltaTime);
+                transform.Translate(-transform.right * (speed) * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(Vector3.up * (rotateSpeed / 3) * Time.deltaTime);
+                transform.Translate(transform.right * (speed) * Time.deltaTime);
+            }
         }
         else if (playerRiding)
         {
