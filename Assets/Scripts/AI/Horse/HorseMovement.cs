@@ -21,6 +21,7 @@ public class HorseMovement : MonoBehaviour
     private GameObject player;
     private CameraController cc;
     private PlayerInput pi;
+    private PlayerStats ps;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class HorseMovement : MonoBehaviour
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         cc = GameObject.FindObjectOfType<CameraController>();
         pi = GameObject.FindObjectOfType<PlayerInput>();
+        ps = GameObject.FindObjectOfType<PlayerStats>();
         anim = GetComponent<Animator>();
     }
 
@@ -58,11 +60,21 @@ public class HorseMovement : MonoBehaviour
         else if (playerRiding)
         {
             HorseControls();
+            CanDieOnHorse();
         }
 
         if (!canJump)
         {
             CheckGround();
+        }
+    }
+
+    void CanDieOnHorse()
+    {
+        if (ps.Health <= 0)
+        {
+            forcedRiding = true;
+            Invoke("ExitHorse", 1.5f);
         }
     }
 

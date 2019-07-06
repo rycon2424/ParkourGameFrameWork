@@ -14,6 +14,8 @@ public class CameraCollision : MonoBehaviour
 
     private float initDist;
 
+    public LayerMask lm;
+
     private void Start()
     {
         cam = GetComponentInChildren<Camera>().transform;
@@ -25,9 +27,8 @@ public class CameraCollision : MonoBehaviour
     {
         Vector3 rayStart = pivot.transform.position;
         Vector3 dir = -pivot.transform.forward;
-
-        int allButPlayer = ~(1 << 8);
-        if (Physics.SphereCast(rayStart, sphereRadius, dir, out hit, initDist, allButPlayer, QueryTriggerInteraction.Ignore))
+        
+        if (Physics.SphereCast(rayStart, sphereRadius, dir, out hit, initDist, lm, QueryTriggerInteraction.Ignore))
         {
             if (hit.distance == 0f)
             {
