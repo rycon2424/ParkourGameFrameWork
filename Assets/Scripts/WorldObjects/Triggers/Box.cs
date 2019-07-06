@@ -106,7 +106,7 @@ public class Box : MonoBehaviour
                 Debug.Log("EnterBox");
                 CheckFace();
                 transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.24f);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, playerOffset);
                 anim.SetFloat("Speed", 0);
                 anim.SetBool("PushBox", true);
                 pc.enabled = false;
@@ -129,6 +129,7 @@ public class Box : MonoBehaviour
         anim.SetBool("PushBox", false);
         pc.enabled = true;
         playerLocked = false;
+        anim.applyRootMotion = true;
     }
 
     void LockPlayer()
