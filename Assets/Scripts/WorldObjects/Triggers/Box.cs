@@ -9,7 +9,7 @@ public class Box : MonoBehaviour
     private PlayerInput pi;
     private Animator anim;
     private Transform player;
-
+    
     public bool playerLocked = false;
     public float playerOffset;
 
@@ -123,13 +123,16 @@ public class Box : MonoBehaviour
 
     public void ExitBox()
     {
-        Debug.Log("ExitBox");
-        gameObject.layer = 0;
-        transform.parent = null;
-        anim.SetBool("PushBox", false);
-        pc.enabled = true;
-        playerLocked = false;
-        anim.applyRootMotion = true;
+        if (playerLocked)
+        {
+            Debug.Log("ExitBox");
+            gameObject.layer = 0;
+            transform.parent = null;
+            anim.SetBool("PushBox", false);
+            pc.enabled = true;
+            playerLocked = false;
+            anim.applyRootMotion = true;
+        }
     }
 
     void LockPlayer()
