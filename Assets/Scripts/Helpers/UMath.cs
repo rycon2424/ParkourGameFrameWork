@@ -24,42 +24,76 @@ public static class UMath
     {
         // Check height wise
         if (Physics.Raycast(bottom, Vector3.up, height, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            if (PlayerController.debugClimb)
+            {
+                Debug.Log("Height Cant fit");
+                Debug.DrawRay(bottom, Vector3.up * 1.8f, Color.red, 2f);
+            }
             return false;
+        }
+        else if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(bottom, Vector3.up * 1.8f, Color.yellow, 2f);
+        }
 
         // Check each side using radius
         Vector3 halfWayUp = bottom + (Vector3.up * height / 2f);
-        //Debug
-        if (PlayerController.debugClimb)
-        {
-            Debug.DrawRay(halfWayUp, Vector3.forward * radius, Color.yellow, 0.5f);
-        }
-        //
         if (Physics.Raycast(halfWayUp, Vector3.forward, radius, layerMask, QueryTriggerInteraction.Ignore))
-            return false;
-        //Debug
-        if (PlayerController.debugClimb)
         {
-            Debug.DrawRay(halfWayUp, Vector3.back * radius, Color.yellow, 0.5f);
+            if (PlayerController.debugClimb)
+            {
+                Debug.DrawRay(halfWayUp, Vector3.forward * 0.3f, Color.red, 2f);
+                Debug.Log("Front of radius can't fit");
+            }
+            return false;
         }
-        //
+        else if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.forward * 0.3f, Color.yellow, 2f);
+        }
+        
         if (Physics.Raycast(halfWayUp, Vector3.back, radius, layerMask, QueryTriggerInteraction.Ignore))
-            return false;
-        //Debug
-        if (PlayerController.debugClimb)
         {
-            Debug.DrawRay(halfWayUp, Vector3.right * radius, Color.yellow, 0.5f);
+            if (PlayerController.debugClimb)
+            {
+                Debug.Log("Back of radius can't fit");
+                Debug.DrawRay(halfWayUp, Vector3.back * 0.3f, Color.red, 2f);
+            }
+            return false;
         }
-        //
+        else if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.back * 0.3f, Color.yellow, 2f);
+        }
+        
         if (Physics.Raycast(halfWayUp, Vector3.right, radius, layerMask, QueryTriggerInteraction.Ignore))
-            return false;
-        //Debug
-        if (PlayerController.debugClimb)
         {
-            Debug.DrawRay(halfWayUp, Vector3.left * radius, Color.yellow, 0.5f);
-        }
-        //
-        if (Physics.Raycast(halfWayUp, Vector3.left, radius, layerMask, QueryTriggerInteraction.Ignore))
+            if (PlayerController.debugClimb)
+            {
+                Debug.Log("Right of radius can't fit");
+                Debug.DrawRay(halfWayUp, Vector3.right * 0.3f, Color.red, 2f);
+            }
             return false;
+        }
+        else if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.right * 0.3f, Color.yellow, 2f);
+        }
+        
+        if (Physics.Raycast(halfWayUp, Vector3.left, radius, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            if (PlayerController.debugClimb)
+            {
+                Debug.Log("Left of radius can't fit");
+                Debug.DrawRay(halfWayUp, Vector3.left * 0.3f, Color.red, 2f);
+            }
+            return false;
+        }
+        else if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.left * 0.3f, Color.yellow, 2f);
+        }
 
         return true;
     }

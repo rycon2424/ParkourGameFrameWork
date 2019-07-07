@@ -102,7 +102,7 @@ public class Box : MonoBehaviour
                 Debug.Log("EnterBox");
                 CheckFace();
                 transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, playerOffset);
+                //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, playerOffset);
                 anim.SetFloat("Speed", 0);
                 anim.SetBool("PushBox", true);
                 pc.enabled = false;

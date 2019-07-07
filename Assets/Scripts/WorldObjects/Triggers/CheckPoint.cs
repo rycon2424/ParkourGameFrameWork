@@ -20,11 +20,7 @@ public class CheckPoint : MonoBehaviour
         anim = GetComponent<Animator>();
         checkpointSound = GetComponent<AudioSource>();
         player = GameObject.FindObjectOfType<PlayerController>().transform;
-        if (checkpoint.x == 0 && checkpoint.y == 0 && checkpoint.z == 0)
-        {
-            Debug.Log("No CheckPoints Yet");
-        }
-        else
+        if (checkpoint.x != 0 && checkpoint.y != 0 && checkpoint.z != 0)
         {
             player.transform.position = checkpoint;
         }
@@ -38,7 +34,6 @@ public class CheckPoint : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Debug.Log("CHECKPOINT");
             anim.Play("CheckPoint");
             //checkpointSound.Play();
             checkpoint = this.transform.position;

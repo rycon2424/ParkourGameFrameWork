@@ -109,7 +109,18 @@ public class Climbing : StateBase<PlayerController>
                 Vector3 tryClimbTo = ledgeInfo.Point + player.transform.forward * player.CharControl.radius;
                 if (UMath.CanFitInSpace(tryClimbTo, player.CharControl.height, player.CharControl.radius))
                 {
+                    if (PlayerController.debugClimb)
+                    {
+                        Debug.Log("Enough space to climb");
+                    }
                     ClimbUp(player);
+                }
+                else
+                {
+                    if (PlayerController.debugClimb)
+                    {
+                        Debug.Log("Not enough space to climb");
+                    }
                 }
             }
         }
@@ -245,8 +256,7 @@ public class Climbing : StateBase<PlayerController>
 
         player.Anim.SetFloat("Speed", 0f);
         player.Anim.SetFloat("TargetSpeed", 0f);
-
-
+        
         player.Anim.SetTrigger("ClimbUp");
 
         isClimbingUp = true;
