@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     #region Private Serializable Fields
 
     [SerializeField] private bool autoLedgeTarget = true;
+    [SerializeField] private bool debugClimbing = true;
+    public static bool debugClimb;
 
     [Header("Movement Speeds")]
     [SerializeField] private float runSpeed = 3.49f;
@@ -151,6 +153,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        debugClimb = debugClimbing;
+
         CheckForGround();
 
         if (Input.GetKey(KeyCode.Escape))

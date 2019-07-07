@@ -45,7 +45,7 @@ public class Crouch : StateBase<PlayerController>
         AnimatorStateInfo animState = player.Anim.GetCurrentAnimatorStateInfo(0);
         //DEBUG
         Vector3 PlayerVector = new Vector3(0, 1.8f, 0);
-        Debug.DrawRay(player.transform.position, PlayerVector, Color.red, 2);
+        Debugging(player.transform.position, PlayerVector, Color.red, 2);
         //
         if (!Input.GetKey(player.Inputf.crouch))
         {
@@ -65,5 +65,13 @@ public class Crouch : StateBase<PlayerController>
 
         player.MoveGrounded(player.WalkSpeed);
         player.RotateToVelocityGround();
+    }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
+        }
     }
 }

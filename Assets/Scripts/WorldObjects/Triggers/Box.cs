@@ -50,12 +50,10 @@ public class Box : MonoBehaviour
     {
         Vector3 playerHeight = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);
         Debug.DrawRay(playerHeight, (transform.position - playerHeight).normalized * hitTestRange, Color.red);
-        Debug.Log("ShootRayCast");
         if (Physics.Raycast(playerHeight, (transform.position - playerHeight).normalized, out hitTest, hitTestRange))
         {
             if (hitTest.collider.tag == "Box")
             {
-                Debug.Log(hitTest.normal);
                 player.rotation = Quaternion.LookRotation(-hitTest.normal, Vector3.up);
             }
         }
@@ -73,7 +71,6 @@ public class Box : MonoBehaviour
             {
                 if (hitForward.collider.tag != "")
                 {
-                    Debug.Log("Blocked");
                     anim.applyRootMotion = false;
                     return;
                 }
@@ -88,7 +85,6 @@ public class Box : MonoBehaviour
             {
                 if (hitBack.collider.tag != "")
                 {
-                    Debug.Log("Blocked");
                     anim.applyRootMotion = false;
                     return;
                 }
@@ -125,7 +121,6 @@ public class Box : MonoBehaviour
     {
         if (playerLocked)
         {
-            Debug.Log("ExitBox");
             gameObject.layer = 0;
             transform.parent = null;
             anim.SetBool("PushBox", false);

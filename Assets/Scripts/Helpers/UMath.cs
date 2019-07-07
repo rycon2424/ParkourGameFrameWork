@@ -20,7 +20,7 @@ public static class UMath
         return new Vector3(Mathf.Abs(vector.x), Mathf.Abs(vector.y), Mathf.Abs(vector.z));
     }
 
-    public static bool CanFitInSpace(Vector3 bottom, float height, float radius, int layerMask = ~(1 << 8))
+    public static bool CanFitInSpace(Vector3 bottom, float height, float radius, int layerMask = ~(1 << 15))
     {
         // Check height wise
         if (Physics.Raycast(bottom, Vector3.up, height, layerMask, QueryTriggerInteraction.Ignore))
@@ -28,16 +28,36 @@ public static class UMath
 
         // Check each side using radius
         Vector3 halfWayUp = bottom + (Vector3.up * height / 2f);
-
+        //Debug
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.forward * radius, Color.yellow, 0.5f);
+        }
+        //
         if (Physics.Raycast(halfWayUp, Vector3.forward, radius, layerMask, QueryTriggerInteraction.Ignore))
             return false;
-
+        //Debug
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.back * radius, Color.yellow, 0.5f);
+        }
+        //
         if (Physics.Raycast(halfWayUp, Vector3.back, radius, layerMask, QueryTriggerInteraction.Ignore))
             return false;
-
+        //Debug
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.right * radius, Color.yellow, 0.5f);
+        }
+        //
         if (Physics.Raycast(halfWayUp, Vector3.right, radius, layerMask, QueryTriggerInteraction.Ignore))
             return false;
-
+        //Debug
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(halfWayUp, Vector3.left * radius, Color.yellow, 0.5f);
+        }
+        //
         if (Physics.Raycast(halfWayUp, Vector3.left, radius, layerMask, QueryTriggerInteraction.Ignore))
             return false;
 

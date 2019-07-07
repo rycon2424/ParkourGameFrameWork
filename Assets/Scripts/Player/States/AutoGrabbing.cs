@@ -117,12 +117,25 @@ public class AutoGrabbing : StateBase<PlayerController>
 
     public bool HasFeetRoom()
     {
+        //Debug
+        Debugging(grabPoint, ledgeInfo.Direction * 1f, Color.yellow, 2f);
+        //
         if (Physics.Raycast(grabPoint, ledgeInfo.Direction, 1f))
             return false;
-
+        //Debug
+        Debugging(grabPoint, Vector3.up * 1.25f, Color.yellow, 2f);
+        //
         if (Physics.Raycast(grabPoint + Vector3.up * 1.25f, ledgeInfo.Direction, 1f))
             return false;
 
         return true;
+    }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
+        }
     }
 }

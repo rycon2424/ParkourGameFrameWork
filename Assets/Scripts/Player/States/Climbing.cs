@@ -210,7 +210,7 @@ public class Climbing : StateBase<PlayerController>
         {
             Vector3 start = player.transform.position + (i * deltaHeight * Vector3.up);
             //DEBUG
-            Debug.DrawRay(start, dir * 1f, Color.red);
+            Debugging(start, dir * 1f, Color.red, 0.1f);
             //
             if (Physics.Raycast(start, dir, distance, ~(1 << 8)))
                 return BlockType.Inner;
@@ -228,7 +228,7 @@ public class Climbing : StateBase<PlayerController>
         {
             Vector3 start = player.transform.position + (i * deltaHeight * Vector3.up) + (dir * distance);
             //DEBUG
-            Debug.DrawRay(start, player.transform.forward * 1f, Color.red, 1f);
+            Debugging(start, player.transform.forward * 1f, Color.red, 1f);
             //
             if (Physics.Raycast(start, player.transform.forward, distance, ~(1 << 8)))
                 return BlockType.NoClimb;
@@ -246,10 +246,8 @@ public class Climbing : StateBase<PlayerController>
         player.Anim.SetFloat("Speed", 0f);
         player.Anim.SetFloat("TargetSpeed", 0f);
 
-        if (jumpHeldFor >= HANDSTAND_HOLD_TIME)
-            player.Anim.SetTrigger("Handstand");
-        else
-            player.Anim.SetTrigger("ClimbUp");
+
+        player.Anim.SetTrigger("ClimbUp");
 
         isClimbingUp = true;
 
@@ -284,6 +282,14 @@ public class Climbing : StateBase<PlayerController>
             newPosition.y = ledgeInfo.Point.y - player.HangUpOffset;
 
             player.transform.position = Vector3.Lerp(player.transform.position, newPosition, Time.deltaTime * 50f);
+        }
+    }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
         }
     }
 }

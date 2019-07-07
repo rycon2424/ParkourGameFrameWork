@@ -87,7 +87,7 @@ class Freeclimb : StateBase<PlayerController>
 
         Vector3 ledgeCheckStart = player.transform.position + 1.6f * Vector3.up;
         //DEBUG
-        Debug.DrawRay(ledgeCheckStart, player.transform.forward * 1f, Color.red, 2);
+        Debugging(ledgeCheckStart, player.transform.forward * 1f, Color.red, 2);
         //
         if (forward > 0.1f && !Physics.Raycast(ledgeCheckStart - player.transform.forward * 0.2f, player.transform.forward, 1f))
         {
@@ -132,7 +132,7 @@ class Freeclimb : StateBase<PlayerController>
     {
         // Stops player climbing into roof
         //DEBUG
-        Debug.DrawRay(player.transform.position, player.transform.up * 1f, Color.red);
+        Debugging(player.transform.position, player.transform.up * 1f, Color.red, 0.1f);
         //
         if (Physics.Raycast(player.transform.position + player.CharControl.height * Vector3.up, Vector3.up, 1f))
             forward = Mathf.Clamp(forward, -1f, 0f);
@@ -172,7 +172,7 @@ class Freeclimb : StateBase<PlayerController>
                 return CornerType.Continue;
 
             //DEBUG
-            Debug.DrawRay(start, player.transform.forward * 1, Color.red, 0.2f);
+            Debugging(start, player.transform.forward * 1, Color.red, 0.2f);
             //
 
             // Test for stopping cause end of freeclimb
@@ -237,5 +237,14 @@ class Freeclimb : StateBase<PlayerController>
         player.Anim.SetBool("isOutCorner", isOutCornering);
         player.Anim.SetBool("isInCorner", isInCornering);
     }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
+        }
+    }
+
 }
 

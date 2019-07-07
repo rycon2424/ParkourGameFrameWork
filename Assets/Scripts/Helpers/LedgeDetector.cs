@@ -42,6 +42,8 @@ public class LedgeDetector
             Vector3 heightCheckStart = ledgeInfo.Point - dir * player.HangForwardOffset;
 
             // If we hit something that isn't a trigger thats not water then something is blocking
+            //Debug
+            Debugging(heightCheckStart, Vector3.down * player.HangUpOffset, Color.green, 1);
             //
             RaycastHit hit;
             if (Physics.Raycast(heightCheckStart, Vector3.down, out hit, player.HangUpOffset, ~(1 << 8), QueryTriggerInteraction.Collide))
@@ -74,6 +76,9 @@ public class LedgeDetector
         // Horizontal check
         //
         RaycastHit hHit;
+        //Debug
+        Debugging(start, dir * maxDistance, Color.green, 0.3f);
+        //
         if (!Physics.Raycast(start, dir, out hHit, maxDistance, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
         
@@ -88,7 +93,9 @@ public class LedgeDetector
         RaycastHit vHit; 
         start = hHit.point + (dir * minDepth);
         start.y += deltaHeight;
-
+        //Debug
+        Debugging(start, Vector3.down * deltaHeight, Color.green, 0.3f);
+        //
         if (!Physics.Raycast(start, Vector3.down, out vHit, deltaHeight, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
 
@@ -118,17 +125,26 @@ public class LedgeDetector
         Vector3 ledgePoint = new Vector3(hHit.point.x, vHit.point.y - offset, hHit.point.z);
 
         // Check nothing blocking vertically
-        //
+
         start = ledgePoint + hHit.normal * 0.1f - Vector3.up * 0.1f;
+        //Debug
+        Debugging(start, Vector3.up * 0.2f, Color.green, 0.3f);
+        //
         if (Physics.Raycast(start, Vector3.up, 0.2f, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
 
         start = ledgePoint + hHit.normal * 0.1f + Vector3.up * 0.1f;
+        //Debug
+        Debugging(start, Vector3.down * 0.2f, Color.green, 0.3f);
+        //
         if (Physics.Raycast(start, Vector3.down, 0.2f, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
 
         // Check minimum depth
         start = ledgePoint + Vector3.up * 0.1f + hHit.normal * 0.1f;
+        //Debug
+        Debugging(start, -hHit.normal * 2, Color.green, 0.3f);
+        //
         if (Physics.Raycast(start, -hHit.normal, minDepth + 0.1f, notPlayerLayer, QueryTriggerInteraction.Ignore))
             goto NoLedge;
 
@@ -151,6 +167,9 @@ public class LedgeDetector
     {
         RaycastHit hit;
 
+        //Debug
+        Debugging(start, dir * 2, Color.green, 0.3f);
+        //
         if (Physics.Raycast(start, dir, out hit, maxHeight, ~(1 << 8), QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.CompareTag("MonkeySwing"))
@@ -178,7 +197,9 @@ public class LedgeDetector
         {
             RaycastHit hHit;
             Vector3 hStart = new Vector3(start.x, vHit.point.y - 0.01f, start.z);
-            
+            //Debug
+            Debugging(start, dir * depth, Color.green, 0.3f);
+            //
             if (Physics.Raycast(start, dir, out hHit, depth, ~(1 << 8)))
             {
                 Vector3 ledgeRight = Vector3.Cross(Vector3.up, hHit.normal);
@@ -192,6 +213,9 @@ public class LedgeDetector
                     Vector3 ledgePoint = new Vector3(hHit.point.x, vHit.point.y, hHit.point.z);
 
                     hStart = ledgePoint - dir * 0.1f + Vector3.up * 1.75f;
+                    //Debug
+                    Debugging(hStart, dir * 1, Color.green, 0.3f);
+                    //
                     if (!Physics.Raycast(hStart, dir, 1f))
                     {
                         ledgeInfo = new LedgeInfo(LedgeType.Normal, ledgePoint, -hHit.normal, hHit.collider);
@@ -204,6 +228,14 @@ public class LedgeDetector
 
         ledgeInfo = new LedgeInfo();
         return false;
+    }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
+        }
     }
 
     public float MinDepth

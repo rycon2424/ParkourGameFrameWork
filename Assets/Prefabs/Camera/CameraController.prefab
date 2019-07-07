@@ -94,7 +94,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 279
+    m_Bits: 3863
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -240,4 +240,4 @@ MonoBehaviour:
   sphereRadius: 0.2
   lm:
     serializedVersion: 2
-    m_Bits: 1079
+    m_Bits: 5

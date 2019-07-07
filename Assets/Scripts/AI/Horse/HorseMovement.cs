@@ -108,20 +108,20 @@ public class HorseMovement : MonoBehaviour
                 anim.SetBool("Run", false);
                 anim.SetBool("Walk", true);
             }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Rotate(Vector3.up * -rotateSpeed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+            }
         }
         else
         {
             anim.SetBool("Idle", true);
             anim.SetBool("Run", false);
             anim.SetBool("Walk", false);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.up * -rotateSpeed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         }
     }
 

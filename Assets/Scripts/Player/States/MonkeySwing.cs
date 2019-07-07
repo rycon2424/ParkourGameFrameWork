@@ -66,11 +66,19 @@ public class MonkeySwing : StateBase<PlayerController>
         {
             if (hit.collider.CompareTag("MonkeySwing"))
             //DEBUG
-            Debug.DrawRay(target, Vector3.up * hit.distance, Color.red, 2f);
+            Debugging(target, Vector3.up * hit.distance, Color.red, 2f);
             //
             return true;
         }
 
         return false;
+    }
+
+    void Debugging(Vector3 start, Vector3 dir, Color c, float duration)
+    {
+        if (PlayerController.debugClimb)
+        {
+            Debug.DrawRay(start, dir * 1f, c, duration);
+        }
     }
 }
