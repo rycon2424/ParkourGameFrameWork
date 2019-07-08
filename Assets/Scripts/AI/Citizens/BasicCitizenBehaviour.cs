@@ -51,6 +51,7 @@ public class BasicCitizenBehaviour : MonoBehaviour
                 if (thisAgent.enabled == true && thisAgent.remainingDistance < remainingDistance)
                 {
                     thisAgent.enabled = false;
+                    Debug.Log("Destination Reached");
                     anim.SetBool("isIdle", true);
                     anim.SetBool("isWalking", false);
                     StartCoroutine(RandomMovement());
@@ -86,6 +87,8 @@ public class BasicCitizenBehaviour : MonoBehaviour
 
     public IEnumerator RandomMovement()
     {
+        Debug.Log("Using Coroutine");
+
         int randomTime = Random.Range(minTime, maxTime);
 
         //Debug.Log("thinking time = " + randomTime);
@@ -97,26 +100,30 @@ public class BasicCitizenBehaviour : MonoBehaviour
         switch (chance)
         {
             case 1:
-                //Debug.Log("prr prr braindead..");
+                Debug.Log("Idling..");
                 StartCoroutine(RandomMovement());
                 break;
             case 2:
-                //Debug.Log("Moving..");
+                Debug.Log("Moving..");
                 thisAgent.enabled = true;
                 int lastDestination = selectedDestination;
                 selectedDestination = Random.Range(0, DestinationPoints.Count);
 
-                while (selectedDestination == lastDestination || DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed)
+                while (selectedDestination == lastDestination || DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed/* || thisAgent.SetDestination(DestinationPoints[selectedDestination].transform.position) == false*/)
                 {
                     selectedDestination = Random.Range(0, DestinationPoints.Count);
                 }
 
                 DestinationPoints[lastDestination].GetComponent<DestinationPointScript>().isUsed = false;
+
                 thisAgent.SetDestination(DestinationPoints[selectedDestination].transform.position);
+                //Debug
+                Debug.Log(DestinationPoints[selectedDestination]);
+                Debug.Log(thisAgent.SetDestination(DestinationPoints[selectedDestination].transform.position));
+                //
+
                 DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed = true;
-                
                 anim.SetBool("isWalking", true);
-                anim.SetBool("isAttacking", false);
                 anim.SetBool("isIdle", false);
 
                 break;
