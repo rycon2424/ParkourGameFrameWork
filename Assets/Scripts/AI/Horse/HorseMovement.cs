@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class HorseMovement : MonoBehaviour
 {
@@ -198,6 +199,15 @@ public class HorseMovement : MonoBehaviour
                 canCheck = false;
             }
         }
+    }
+
+    public void ShakeCam()
+    {
+        if (ps.Health <= 0)
+        {
+            return;
+        }
+        CameraShaker.Instance.ShakeOnce(1f, 2f, .4f, .4f);
     }
     
 }

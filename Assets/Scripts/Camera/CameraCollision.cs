@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class CameraCollision : MonoBehaviour
 {
@@ -44,5 +45,7 @@ public class CameraCollision : MonoBehaviour
         }
 
         cam.localPosition = Vector3.Lerp(cam.localPosition, cam.localPosition.normalized * initDist, Time.deltaTime * retreatSpeed);
+
+        GameObject.FindObjectOfType<CameraShaker>().AddOffsets();
     }
 }

@@ -62,7 +62,10 @@ namespace EZCameraShake
                     rotAddShake += CameraUtilities.MultiplyVectors(c.UpdateShake(), c.RotationInfluence);
                 }
             }
+        }
 
+        public void AddOffsets()
+        {
             transform.localPosition = posAddShake + RestPositionOffset;
             transform.localEulerAngles = rotAddShake + RestRotationOffset;
         }
