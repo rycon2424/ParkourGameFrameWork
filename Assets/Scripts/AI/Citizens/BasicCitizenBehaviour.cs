@@ -114,8 +114,7 @@ public class BasicCitizenBehaviour : MonoBehaviour
                 DestinationPoints[lastDestination].GetComponent<DestinationPointScript>().isUsed = false;
                 thisAgent.SetDestination(DestinationPoints[selectedDestination].transform.position);
                 DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed = true;
-
-                Debug.Log("Wut?");
+                
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isIdle", false);
