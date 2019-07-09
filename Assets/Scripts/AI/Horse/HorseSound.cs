@@ -8,6 +8,8 @@ public class HorseSound : MonoBehaviour
     private AudioSource audioplayer;
     public AudioClip[] horseRun;
     public AudioClip[] horseWalk;
+    public AudioClip[] horseJump;
+    public AudioClip[] horseLanding;
 
     void Start()
     {
@@ -23,6 +25,18 @@ public class HorseSound : MonoBehaviour
     void HorseWalk()
     {
         audioplayer.clip = horseWalk[Random.Range(0, horseWalk.Length)];
+        audioplayer.Play();
+    }
+
+    void HorseJump()
+    {
+        audioplayer.clip = horseJump[Random.Range(0, horseJump.Length)];
+        audioplayer.Play();
+    }
+
+    void HorseLanding()
+    {
+        audioplayer.clip = horseLanding[Random.Range(0, horseLanding.Length)];
         audioplayer.Play();
     }
 
