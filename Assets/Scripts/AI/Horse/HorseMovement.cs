@@ -18,6 +18,7 @@ public class HorseMovement : MonoBehaviour
     public float rotateSpeed;
     public float jumpHeight;
 
+    private bool canGallop = true;
     private Animator anim;
     private GameObject player;
     private CameraController cc;
@@ -91,7 +92,7 @@ public class HorseMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            if (sprint)
+            if (sprint && canGallop)
             {
                 transform.Translate(Vector3.forward * (speed * 5) * Time.deltaTime);
                 anim.SetBool("Idle", false);
@@ -138,6 +139,11 @@ public class HorseMovement : MonoBehaviour
                     EnterHorse();
                     Invoke("CanExit", 1);
                 }
+            }
+            if (other.CompareTag("Restrict Gallop"))
+            {
+                canGallop = false;
+                sprint = false;
             }
         }
     }
@@ -210,4 +216,12 @@ public class HorseMovement : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(1f, 2f, .4f, .4f);
     }
     
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Restrict Gallop"))
+        {
+            canGallop = true;
+        }
+    }
+
 }
