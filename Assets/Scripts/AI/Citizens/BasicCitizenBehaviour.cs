@@ -60,7 +60,7 @@ public class BasicCitizenBehaviour : MonoBehaviour
                     {
                         hasDestination = false;
                         thisAgent.enabled = false;
-                        Debug.Log("Destination Reached");
+                        //Debug.Log("Destination Reached");
                         anim.SetBool("isIdle", true);
                         anim.SetBool("isWalking", false);
                         StartCoroutine(RandomMovement());
@@ -112,11 +112,11 @@ public class BasicCitizenBehaviour : MonoBehaviour
         switch (chance)
         {
             case 1: // Idle
-                Debug.Log("Idling..");
+                //Debug.Log("Idling..");
                 StartCoroutine(RandomMovement());
                 break;
             case 2: // Walk
-                Debug.Log("Moving..");
+                //Debug.Log("Moving..");
                 thisAgent.enabled = true;
 
                 //Sets the current destination as last so he cant go to the same destination twice
