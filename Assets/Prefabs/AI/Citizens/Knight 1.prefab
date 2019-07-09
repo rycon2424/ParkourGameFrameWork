@@ -694,9 +694,9 @@ MonoBehaviour:
   - {fileID: 0}
   act: 0
   pers: 1
-  remainingDistance: 1
   minTime: 2
   maxTime: 4
+  hasDestination: 0
 --- !u!1 &2146691402399496602
 GameObject:
   m_ObjectHideFlags: 0
