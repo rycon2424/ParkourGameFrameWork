@@ -41,7 +41,7 @@ public class HorseMovement : MonoBehaviour
     {
         if (forcedRiding)
         {
-            transform.Translate(Vector3.forward * (speed * 5) * Time.deltaTime);
+            transform.Translate(Vector3.forward * (speed * 8) * Time.deltaTime);
             anim.SetBool("Idle", false);
             anim.SetBool("Run", true);
             anim.SetBool("Walk", false);
@@ -51,20 +51,21 @@ public class HorseMovement : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(Vector3.up * (-rotateSpeed / 3) * Time.deltaTime);
+                transform.Rotate(Vector3.up * (-rotateSpeed / 2) * Time.deltaTime);
                 transform.Translate(-transform.right * (speed) * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(Vector3.up * (rotateSpeed / 3) * Time.deltaTime);
+                transform.Rotate(Vector3.up * (rotateSpeed / 2) * Time.deltaTime);
                 transform.Translate(transform.right * (speed) * Time.deltaTime);
             }
         }
         else if (playerRiding)
         {
             HorseControls();
-            CanDieOnHorse();
         }
+
+        CanDieOnHorse();
 
         if (!canJump)
         {
