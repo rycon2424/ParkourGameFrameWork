@@ -17,6 +17,7 @@ public class HorseMovement : MonoBehaviour
     public float speed;
     public float rotateSpeed;
     public float jumpHeight;
+    public GameObject postEffect;
 
     private bool canGallop = true;
     private Animator anim;
@@ -69,6 +70,15 @@ public class HorseMovement : MonoBehaviour
         {
             CheckGround();
         }
+
+        if (anim.GetBool("Run") == true)
+        {
+            postEffect.SetActive(true);
+        }
+        else
+        {
+            postEffect.SetActive(false);
+        }  
     }
 
     void CanDieOnHorse()
