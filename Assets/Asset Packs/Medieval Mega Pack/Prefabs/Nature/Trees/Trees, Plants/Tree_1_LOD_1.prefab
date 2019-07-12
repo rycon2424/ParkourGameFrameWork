@@ -181,6 +181,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Cutoff: 0.3
     - _SquashAmount: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -370,7 +371,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 799
-  materialHash: 19a9171ca5aae2fc4d1c26fa8dbc5152215482368
+  materialHash: 6ab3eafcd19888cf4046efc4d3d50e92215482368
   root:
     _uniqueID: 1
     seed: 1234
