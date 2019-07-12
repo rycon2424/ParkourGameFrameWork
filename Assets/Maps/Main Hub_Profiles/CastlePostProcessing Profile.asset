@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CastlePostProcessing Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 114317184940000402}
---- !u!114 &114317184940000402
+  - {fileID: 114903732513445696}
+--- !u!114 &114903732513445696
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 0
-    value: 0
+    value: 49
   tint:
     overrideState: 0
     value: 0
@@ -87,11 +87,11 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 1
-    value: 3
+    overrideState: 0
+    value: 0
   mixerRedOutRedIn:
     overrideState: 0
-    value: 100
+    value: 0
   mixerRedOutGreenIn:
     overrideState: 0
     value: 0
@@ -118,13 +118,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: -0.12048192}
+    value: {x: 0.7804872, y: 0.87569517, z: 1, w: -0.17009854}
   gamma:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 1, z: 1, w: -0.000000025422874}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 1, z: 1, w: 0.537153}
   masterCurve:
     overrideState: 0
     value:
