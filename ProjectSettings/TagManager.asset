@@ -15,6 +15,7 @@ TagManager:
   - MovingPlatform
   - Box
   - Restrict Gallop
+  - Horse
   layers:
   - Default
   - TransparentFX

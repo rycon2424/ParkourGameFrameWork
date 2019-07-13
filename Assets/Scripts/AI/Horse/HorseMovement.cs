@@ -7,6 +7,7 @@ public class HorseMovement : MonoBehaviour
 {
 
     [Header("Horse")]
+    public int health;
     public bool rideAble;
     public bool playerRiding;
     public bool sprint;
@@ -20,14 +21,15 @@ public class HorseMovement : MonoBehaviour
     public GameObject postEffect;
 
     private bool canGallop = true;
-    private Animator anim;
+    [HideInInspector]
+    public Animator anim;
     private GameObject player;
     private CameraController cc;
     private PlayerInput pi;
     private PlayerStats ps;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         cc = GameObject.FindObjectOfType<CameraController>();
@@ -182,7 +184,7 @@ public class HorseMovement : MonoBehaviour
         //cc.Target = this.transform.GetChild(5);
     }
 
-    void ExitHorse()
+    public void ExitHorse()
     {
         playerRiding = false;
         this.transform.GetChild(5).gameObject.SetActive(true);
@@ -190,6 +192,9 @@ public class HorseMovement : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<Animator>().SetBool("Riding", false);
         player.transform.parent = null;
+        anim.SetBool("Idle", true);
+        anim.SetBool("Run", false);
+        anim.SetBool("Walk", false);
         //cc.Target = player.transform;
     }
     bool canExit = false;
