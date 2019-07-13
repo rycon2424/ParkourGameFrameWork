@@ -65,23 +65,22 @@ public class HorseMovement : MonoBehaviour
         else if (playerRiding)
         {
             HorseControls();
+            if (anim.GetBool("Run") == true)
+            {
+                postEffect.SetActive(true);
+            }
+            else
+            {
+                postEffect.SetActive(false);
+            }
+            CanDieOnHorse();
         }
-
-        CanDieOnHorse();
-
+        
         if (!canJump)
         {
             CheckGround();
         }
-
-        if (anim.GetBool("Run") == true)
-        {
-            postEffect.SetActive(true);
-        }
-        else
-        {
-            postEffect.SetActive(false);
-        }  
+        
     }
 
     void CanDieOnHorse()
