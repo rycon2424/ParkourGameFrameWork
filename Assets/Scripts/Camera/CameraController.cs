@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform target;  // What camera is following
     [SerializeField] private bool mouseControl = true;  // If mouse causes rotation
-    [SerializeField] private float rotationSpeed = 120.0f;  // Speed said rotation happens at
+    public float rotationSpeed = 120.0f;  // Speed said rotation happens at
     [SerializeField] private float pitchMax = 80.0f;  // Max angle cam can be at
     [SerializeField] private float pitchMin = -45.0f;  // Smallest angle cam can be at
     [SerializeField] private float rotationSmoothing = 18f; 

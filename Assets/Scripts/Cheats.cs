@@ -8,12 +8,16 @@ public class Cheats : MonoBehaviour
     public Transform[] checkpoints = new Transform[5];
 
     public Transform player;
+    public bool usingTimeCheats = false;
     public float timeSpeed;
     public GameObject defaultDance;
     
     void Update()
     {
-        Time.timeScale = timeSpeed;
+        if (usingTimeCheats)
+        {
+            Time.timeScale = timeSpeed;
+        }
         if (Input.GetKey(KeyCode.Keypad1))
         {
             player.position = checkpoints[0].position;

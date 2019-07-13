@@ -157,10 +157,10 @@ public class PlayerController : MonoBehaviour
 
         CheckForGround();
 
-        if (Input.GetKey(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = !Cursor.visible;
-        }
+        }*/
 
         if (useGravity)
             ApplyGravity();

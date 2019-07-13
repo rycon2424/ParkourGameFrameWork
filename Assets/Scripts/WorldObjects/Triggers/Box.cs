@@ -31,10 +31,10 @@ public class Box : MonoBehaviour
         {
             ExitBox();
         }
-        if (Input.GetMouseButton(1))
+        /*if (Input.GetMouseButton(1))
         {
             CheckFace();
-        }
+        }*/
     }
 
     RaycastHit hitForward;
