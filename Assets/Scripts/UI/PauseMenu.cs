@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         cc = GameObject.FindObjectOfType<CameraController>();
+        sensitivity.value = cc.rotationSpeed;
     }
 
     void Update()

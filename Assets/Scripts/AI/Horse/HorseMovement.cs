@@ -8,6 +8,7 @@ public class HorseMovement : MonoBehaviour
 
     [Header("Horse")]
     public int health;
+    public int maxHP;
     public bool rideAble;
     public bool playerRiding;
     public bool sprint;
@@ -31,6 +32,7 @@ public class HorseMovement : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        health = maxHP;
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         cc = GameObject.FindObjectOfType<CameraController>();
         pi = GameObject.FindObjectOfType<PlayerInput>();
@@ -171,6 +173,7 @@ public class HorseMovement : MonoBehaviour
     void EnterHorse()
     {
         playerRiding = true;
+        player.GetComponent<PlayerCurrentHorse>().currentHorse = transform;
         this.transform.GetChild(5).gameObject.SetActive(false);
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
@@ -186,6 +189,7 @@ public class HorseMovement : MonoBehaviour
     public void ExitHorse()
     {
         playerRiding = false;
+        player.GetComponent<PlayerCurrentHorse>().currentHorse = null;
         this.transform.GetChild(5).gameObject.SetActive(true);
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerController>().enabled = true;

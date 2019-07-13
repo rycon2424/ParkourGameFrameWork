@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
@@ -12,13 +13,36 @@ public class HUDManager : MonoBehaviour
 
     [SerializeField]
     private RectTransform breathBar;
-
+    
     // Used to stop canvas disappearing when multiple things using it
     private int canvasRequests = 0;
 
+    private PlayerCurrentHorse pch;
+
+    public GameObject horseHealthHud;
+    public Slider horseSlider; 
+
     private void Start()
     {
+        pch = GameObject.FindObjectOfType<PlayerCurrentHorse>();
         //ForceCanvasOff();
+    }
+
+    void Update()
+    {
+        HorseHealth();
+    }
+
+    void HorseHealth()
+    {
+        if (pch.currentHorse == null)
+        {
+            horseHealthHud.SetActive(false);
+            return;
+        }
+        horseHealthHud.SetActive(true);
+        horseSlider.maxValue = pch.currentHorse.GetComponent<HorseMovement>().maxHP;
+        horseSlider.value = pch.currentHorse.GetComponent<HorseMovement>().health;
     }
 
     public void UpdateHealth(float health)
