@@ -28,7 +28,7 @@ public class Waypoint : MonoBehaviour {
 		transform.position = Vector3.MoveTowards (transform.position, waypoints[currentWaypoint].transform.position, speed * Time.deltaTime);
         
         Quaternion targetRotation = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 4 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2 * Time.deltaTime);
 
 		if (currentWaypoint < waypoints.Length - 1) {
 
@@ -46,7 +46,7 @@ public class Waypoint : MonoBehaviour {
         if (Vector3.Distance(transform.position, player.position) > 40)
         {
             Debug.Log("Player is too Far");
-            speed = speed * 0.5f;
+            speed = normalSpeed / 2;
         }
         else if (Vector3.Distance(transform.position, player.position) < 15)
         {
