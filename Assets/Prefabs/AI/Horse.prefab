@@ -224,6 +224,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358023}
+  - component: {fileID: 1942236922}
+  - component: {fileID: 1942236920}
+  - component: {fileID: 1942236921}
   m_Layer: 2
   m_Name: horse R HorseLink
   m_TagString: Untagged
@@ -246,6 +249,81 @@ Transform:
   m_Father: {fileID: 728971947008358017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.000000109545425, y: -0.00000012838947, z: -58.907127}
+--- !u!54 &1942236922
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846503}
+  serializedVersion: 2
+  m_Mass: 1.875
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1942236920
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846503}
+  m_ConnectedBody: {fileID: 1192100321}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.6645853, y: -0.30441508, z: 0.0000063674333}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -80
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &1942236921
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11821913
+  m_Height: 0.47287652
+  m_Direction: 0
+  m_Center: {x: -0.23643826, y: 0, z: 0}
 --- !u!1 &728971947008846505
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +393,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358029}
+  - component: {fileID: 1191062204}
+  - component: {fileID: 1191062202}
+  - component: {fileID: 1191062203}
   m_Layer: 2
   m_Name: horse L Thigh
   m_TagString: Untagged
@@ -337,6 +418,81 @@ Transform:
   m_Father: {fileID: 728971947008358111}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.64934886, y: 179.6328, z: -112.17065}
+--- !u!54 &1191062204
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846509}
+  serializedVersion: 2
+  m_Mass: 1.875
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1191062202
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846509}
+  m_ConnectedBody: {fileID: 833657744}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.0000022053719, y: 0.00000078976154, z: 0.15956421}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -20
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 70
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 30
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &1191062203
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2243859
+  m_Height: 0.747953
+  m_Direction: 0
+  m_Center: {x: -0.3739765, y: 0, z: 0}
 --- !u!1 &728971947008846511
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +779,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358051}
+  - component: {fileID: 196587232}
+  - component: {fileID: 196587230}
+  - component: {fileID: 196587231}
   m_Layer: 2
   m_Name: horse L UpperArm
   m_TagString: Untagged
@@ -645,6 +804,81 @@ Transform:
   m_Father: {fileID: 728971947008358021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 72.33797, y: 91.09386, z: 53.268135}
+--- !u!54 &196587232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846531}
+  serializedVersion: 2
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &196587230
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846531}
+  m_ConnectedBody: {fileID: 1584434770}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.83040833, y: 0.47240704, z: 0.19369236}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -70
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 10
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 50
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &196587231
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.085407995
+  m_Height: 0.34163198
+  m_Direction: 0
+  m_Center: {x: -0.17081599, y: 0, z: 0}
 --- !u!1 &728971947008846533
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +1107,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358061}
+  - component: {fileID: 784075997}
+  - component: {fileID: 784075998}
+  - component: {fileID: 784075999}
   m_Layer: 2
   m_Name: horse R Forearm
   m_TagString: Untagged
@@ -895,6 +1132,81 @@ Transform:
   m_Father: {fileID: 728971947008358095}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.00000011802869, y: -0.00000041510452, z: 16.008385}
+--- !u!54 &784075997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846541}
+  serializedVersion: 2
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &784075998
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846541}
+  m_ConnectedBody: {fileID: 1590850639}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: -1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.34163186, y: 0.0000019371505, z: 0.0000054985285}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 1, z: 0}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -90
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &784075999
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.083004
+  m_Height: 0.41502
+  m_Direction: 0
+  m_Center: {x: -0.20751, y: 0, z: 0}
 --- !u!1 &728971947008846543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1313,7 @@ GameObject:
   - component: {fileID: 728971946843274503}
   - component: {fileID: 728971948567330477}
   - component: {fileID: 728971948567330476}
+  - component: {fileID: 893101177}
   m_Layer: 2
   m_Name: Horse
   m_TagString: Horse
@@ -1061,6 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20fe20d906e9544a6de0cb34b709fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 200
   rideAble: 1
   playerRiding: 0
   sprint: 0
@@ -1070,6 +1384,7 @@ MonoBehaviour:
   rotateSpeed: 100
   jumpHeight: 400
   postEffect: {fileID: 91119268}
+  anim: {fileID: 0}
 --- !u!54 &728971946843274503
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1229,6 +1544,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &893101177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ead85fac77c3b0478fe82b1bc71c498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBodies:
+  - {fileID: 833657744}
+  - {fileID: 1191062204}
+  - {fileID: 244325615}
+  - {fileID: 1192100321}
+  - {fileID: 1942236922}
+  - {fileID: 1584434770}
+  - {fileID: 196587232}
+  - {fileID: 1409122564}
+  - {fileID: 534421973}
+  - {fileID: 1590850639}
+  - {fileID: 784075997}
+  horse: {fileID: 0}
+  mainCollider: {fileID: 8225677229766887846}
 --- !u!1 &728971947008846549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1579,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358069}
+  - component: {fileID: 1584434770}
+  - component: {fileID: 1584434768}
+  - component: {fileID: 1584434769}
   m_Layer: 2
   m_Name: horse HORSEMAN_BONE
   m_TagString: Untagged
@@ -1259,6 +1603,80 @@ Transform:
   m_Father: {fileID: 728971947008358041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.0001602598, y: -0.00016025982, z: 90}
+--- !u!54 &1584434770
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846549}
+  serializedVersion: 2
+  m_Mass: 3.125
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1584434768
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846549}
+  m_ConnectedBody: {fileID: 833657744}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.60820603, y: -0.43351275, z: -0.0000039339066}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: 1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -20
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 20
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 10
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!65 &1584434769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6505308, y: 0.77748334, z: 0.5381663}
+  m_Center: {x: 0.5051396, y: 0.36691496, z: 0.0022393516}
 --- !u!1 &728971947008846553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,8 +1919,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfd9536c14d1b2449847c7d98a6ca024, type: 2}
-  - {fileID: 2100000, guid: 9d2add12abefdfb44a63f09fa5c4bf7f, type: 2}
+  - {fileID: 2100000, guid: 3215305ad780bab488136e9f508448b6, type: 2}
+  - {fileID: 2100000, guid: 3215305ad780bab488136e9f508448b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1608,6 +2026,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358085}
+  - component: {fileID: 244325615}
+  - component: {fileID: 244325613}
+  - component: {fileID: 244325614}
   m_Layer: 2
   m_Name: horse L HorseLink
   m_TagString: Untagged
@@ -1630,6 +2051,81 @@ Transform:
   m_Father: {fileID: 728971947008358047}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.00000006246132, y: 0.00000012941817, z: -47.56578}
+--- !u!54 &244325615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846565}
+  serializedVersion: 2
+  m_Mass: 1.875
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &244325613
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846565}
+  m_ConnectedBody: {fileID: 1191062204}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.747953, y: -0.222022, z: -0.0000014124253}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -80
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &244325614
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11821904
+  m_Height: 0.47287616
+  m_Direction: 0
+  m_Center: {x: -0.23643808, y: 0, z: 0}
 --- !u!1 &728971947008846575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +2135,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358095}
+  - component: {fileID: 1590850639}
+  - component: {fileID: 1590850637}
+  - component: {fileID: 1590850638}
   m_Layer: 2
   m_Name: horse R UpperArm
   m_TagString: Untagged
@@ -1661,6 +2160,81 @@ Transform:
   m_Father: {fileID: 728971947008358033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -72.2295, y: -113.15273, z: 110.629074}
+--- !u!54 &1590850639
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846575}
+  serializedVersion: 2
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1590850637
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846575}
+  m_ConnectedBody: {fileID: 1584434770}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.81941426, y: 0.46208233, z: -0.18921363}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -70
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 10
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 50
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &1590850638
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.085407965
+  m_Height: 0.34163186
+  m_Direction: 0
+  m_Center: {x: -0.17081593, y: 0, z: 0}
 --- !u!1 &728971947008846577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +2244,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358097}
+  - component: {fileID: 833657744}
+  - component: {fileID: 833657743}
   m_Layer: 2
   m_Name: horse Pelvis
   m_TagString: Untagged
@@ -1702,6 +2278,35 @@ Transform:
   m_Father: {fileID: 728971947008358065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.99759, y: 90, z: 0}
+--- !u!54 &833657744
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846577}
+  serializedVersion: 2
+  m_Mass: 3.125
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &833657743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.608207, y: 0.40149862, z: 0.53621936}
+  m_Center: {x: -0.30410254, y: 0.20074931, z: 0.002239585}
 --- !u!1 &728971947008846579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +2316,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358099}
+  - component: {fileID: 1192100321}
+  - component: {fileID: 1192100319}
+  - component: {fileID: 1192100320}
   m_Layer: 2
   m_Name: horse R Thigh
   m_TagString: Untagged
@@ -1733,6 +2341,81 @@ Transform:
   m_Father: {fileID: 728971947008358111}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0.9635389, y: -86.63855, z: -128.36687}
+--- !u!54 &1192100321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846579}
+  serializedVersion: 2
+  m_Mass: 1.875
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1192100319
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846579}
+  m_ConnectedBody: {fileID: 833657744}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.000001013279, y: 0.00000016391277, z: -0.15956683}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: -1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -20
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 70
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 30
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &1192100320
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1993756
+  m_Height: 0.6645853
+  m_Direction: 0
+  m_Center: {x: -0.33229265, y: 0, z: 0}
 --- !u!1 &728971947008846581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +2486,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358105}
+  - component: {fileID: 1409122564}
+  - component: {fileID: 1409122562}
+  - component: {fileID: 1409122563}
   m_Layer: 2
   m_Name: horse L Forearm
   m_TagString: Untagged
@@ -1826,6 +2512,81 @@ Transform:
   m_Father: {fileID: 728971947008358051}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.00000000385414, y: -0.00000021344067, z: 91.03548}
+--- !u!54 &1409122564
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846585}
+  serializedVersion: 2
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!144 &1409122562
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846585}
+  m_ConnectedBody: {fileID: 196587232}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: -1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.34163198, y: 0.000001460314, z: 0.000005796553}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 1, z: 0}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -90
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &1409122563
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.083143294
+  m_Height: 0.41571647
+  m_Direction: 0
+  m_Center: {x: -0.20785823, y: 0, z: 0}
 --- !u!1 &728971947008846587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +2664,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728971947008358113}
+  - component: {fileID: 534421973}
+  - component: {fileID: 534421971}
+  - component: {fileID: 534421972}
   m_Layer: 2
   m_Name: horse Head
   m_TagString: Untagged
@@ -1926,6 +2690,81 @@ Transform:
   m_Father: {fileID: 728971947008358077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.000075329015, y: -0.000079724625, z: 7.7351003}
+--- !u!54 &534421973
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846593}
+  serializedVersion: 2
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &534421971
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846593}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.20782493
+  m_Height: 0.8710324
+  m_Direction: 1
+  m_Center: {x: 0.0000008815283, y: 0.2138812, z: 0.01}
+--- !u!144 &534421972
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728971947008846593}
+  m_ConnectedBody: {fileID: 1584434770}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.23013419, y: 1.0214612, z: -0.000002222867}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 0, z: 1}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -40
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 25
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 25
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 0
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &728971947008846599
 GameObject:
   m_ObjectHideFlags: 0
