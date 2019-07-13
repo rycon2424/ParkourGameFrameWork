@@ -23,6 +23,17 @@ public class AddRigidBody : MonoBehaviour
                 Invoke("Fall", timeTillFall);
             }
         }
+        else if (other.CompareTag("Horse"))
+        {
+            if (timed == false)
+            {
+                Fall();
+            }
+            else
+            {
+                Invoke("Fall", timeTillFall);
+            }
+        }
     }
 
     public void Fall()
@@ -33,7 +44,7 @@ public class AddRigidBody : MonoBehaviour
         }
         // sound.Play();
         Debug.Log("Break");
-        Destroy(this.gameObject);
+        Destroy(this);
     }
 
 }

@@ -5,27 +5,30 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour {
 
     public float speed;
+    private float normalSpeed;
 
-	public GameObject[] waypoints = new GameObject[3];
+    public Transform player;
+
+	public GameObject[] waypoints;
     
 	int currentWaypoint;
 
 	// Use this for initialization
 	void Start () {
-
+        player = GameObject.FindObjectOfType<PlayerInput>().transform;
 		currentWaypoint = 0;
-		
+        normalSpeed = speed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		transform.position = Vector3.MoveTowards (transform.position, 
-			waypoints[currentWaypoint].transform.position, speed * Time.deltaTime);
+        SpeedOnDistanceCheck();
 
-
+		transform.position = Vector3.MoveTowards (transform.position, waypoints[currentWaypoint].transform.position, speed * Time.deltaTime);
+        
         Quaternion targetRotation = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 4 * Time.deltaTime);
 
 		if (currentWaypoint < waypoints.Length - 1) {
 
@@ -37,4 +40,23 @@ public class Waypoint : MonoBehaviour {
 		}
 		
 	}
+
+    void SpeedOnDistanceCheck()
+    {
+        if (Vector3.Distance(transform.position, player.position) > 40)
+        {
+            Debug.Log("Player is too Far");
+            speed = speed * 0.5f;
+        }
+        else if (Vector3.Distance(transform.position, player.position) < 15)
+        {
+            Debug.Log("Player is too Close");
+            speed = speed * 1.3f;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+    }
+
 }
