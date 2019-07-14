@@ -29,13 +29,12 @@ public class PauseMenu : MonoBehaviour
             optionsmenu.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             oldTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+            Time.timeScale = 0.1f;
         }
         if (openMenu)
         {
             Cursor.visible = true;
         }
-        Debug.Log(Time.timeScale);
     }
 
     public void Resume()
