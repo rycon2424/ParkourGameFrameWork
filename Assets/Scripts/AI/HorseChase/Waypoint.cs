@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Waypoint : MonoBehaviour {
 
@@ -46,7 +47,14 @@ public class Waypoint : MonoBehaviour {
         if (Vector3.Distance(transform.position, player.position) > 40)
         {
             Debug.Log("Player is too Far");
-            speed = normalSpeed / 2;
+            if (countingDown == false)
+            {
+                countingDown = true;
+                timerUI.SetActive(true);
+                StartCoroutine("CountingTillGameOver");
+            }
+
+            speed = normalSpeed / 1.5f;
         }
         else if (Vector3.Distance(transform.position, player.position) < 15)
         {
@@ -55,8 +63,36 @@ public class Waypoint : MonoBehaviour {
         }
         else
         {
+            if (countingDown == true)
+            {
+                countingDown = false;
+                timerUI.SetActive(false);
+                StopCoroutine("CountingTillGameOver");
+            }
             speed = normalSpeed;
         }
+    }
+
+    [Header("UI")]
+    public GameObject timerUI;
+    public Text titel;
+    public Text timerText;
+    private bool countingDown;
+    private int timer;
+    private int fulltime;
+
+    IEnumerator CountingTillGameOver()
+    {
+        titel.text = "You're too far from the target!";
+        timer = 15;
+        fulltime = timer;
+        for (int i = 0; i < fulltime; i++)
+        {
+            timerText.text = timer.ToString();
+            yield return new WaitForSeconds(1f);
+            timer--;
+        }
+        GAME_OVER.gameOver = true;
     }
 
 }

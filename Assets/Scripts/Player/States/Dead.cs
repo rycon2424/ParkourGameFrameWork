@@ -34,9 +34,10 @@ public class Dead : StateBase<PlayerController>
 
     public override void Update(PlayerController player)
     {
+        GAME_OVER.canPause = false;
         if (Time.time - timeCounter >= 5f)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GAME_OVER.gameOver = true;
         }
     }
 }

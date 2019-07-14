@@ -22,18 +22,21 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && openMenu == false)
+        if (GAME_OVER.gameOver == false && GAME_OVER.canPause == true)
         {
-            openMenu = true;
-            mainmenu.SetActive(true);
-            optionsmenu.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;
-            oldTimeScale = Time.timeScale;
-            Time.timeScale = 0f;
-        }
-        if (openMenu)
-        {
-            Cursor.visible = true;
+            if (Input.GetKeyDown(KeyCode.Escape) && openMenu == false)
+            {
+                openMenu = true;
+                mainmenu.SetActive(true);
+                optionsmenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                oldTimeScale = Time.timeScale;
+                Time.timeScale = 0f;
+            }
+            if (openMenu)
+            {
+                Cursor.visible = true;
+            }
         }
     }
 
