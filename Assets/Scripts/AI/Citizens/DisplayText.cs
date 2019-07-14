@@ -51,7 +51,7 @@ public class DisplayText : MonoBehaviour
             t.text = currentText;
             yield return new WaitForSeconds(delay);
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         g.SetActive(false);
         if (updateQuest == true)
         {

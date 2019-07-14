@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
             optionsmenu.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             oldTimeScale = Time.timeScale;
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0f;
         }
         if (openMenu)
         {

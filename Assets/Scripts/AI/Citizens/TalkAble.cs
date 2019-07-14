@@ -13,6 +13,14 @@ public class TalkAble : MonoBehaviour
     public bool updateQuest;
     public string newQuest;
 
+    [Header("Active")]
+    public bool activateSomething;
+    public GameObject Esomething;
+    public float eDelay;
+    public bool disableSomething;
+    public GameObject Dsomething;
+    public float dDelay;
+
     private bool inTalkRange;
     private DisplayText dt;
     private PlayerInput pi;
@@ -21,7 +29,10 @@ public class TalkAble : MonoBehaviour
     {
         dt = GameObject.FindObjectOfType<DisplayText>();
         pi = GameObject.FindObjectOfType<PlayerInput>();
-        questLogo.SetActive(false);
+        if (convo)
+        {
+            questLogo.SetActive(false);
+        }
     }
 
     void Update()
@@ -30,6 +41,15 @@ public class TalkAble : MonoBehaviour
         {
             inTalkRange = false;
             dt.Conversation(charName, textToSay, updateQuest, newQuest);
+            questLogo.SetActive(false);
+            if (activateSomething)
+            {
+                Invoke("CheckEnable", eDelay);
+            }
+            if (disableSomething)
+            {
+                Invoke("CheckDisable", dDelay);
+            }
         }
     }
 
@@ -45,17 +65,74 @@ public class TalkAble : MonoBehaviour
         }
         else
         {
-            dt.Thought(textToSay, updateQuest, newQuest);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                dt.Thought(textToSay, updateQuest, newQuest);
+                if (activateSomething)
+                {
+                    Invoke("CheckEnable", eDelay);
+                }
+                if (disableSomething)
+                {
+                    Invoke("CheckDisable", dDelay);
+                }
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && convo)
         {
             inTalkRange = false;
             questLogo.SetActive(false);
         }
     }
 
+    void CheckEnable()
+    {
+        if (activateSomething == true)
+        {
+            Esomething.SetActive(true);
+        }
+        taskEnable = true;
+        BothTasksDone();
+    }
+
+    void CheckDisable()
+    {
+        if (disableSomething == true)
+        {
+            Dsomething.SetActive(false);
+        }
+        taskDisable = true;
+        BothTasksDone();
+    }
+
+    private bool taskDisable;
+    private bool taskEnable;
+    void BothTasksDone()
+    {
+        if (disableSomething && activateSomething)
+        {
+            if (taskDisable && taskEnable)
+            {
+                Destroy(this);
+            }
+        }
+        else if (disableSomething)
+        {
+            if (taskDisable)
+            {
+                Destroy(this);
+            }
+        }
+        else if (activateSomething)
+        {
+            if (taskEnable)
+            {
+                Destroy(this);
+            }
+        }
+    }
 }
