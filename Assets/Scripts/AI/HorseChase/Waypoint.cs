@@ -9,8 +9,12 @@ public class Waypoint : MonoBehaviour {
     private float normalSpeed;
 
     public Transform player;
+    public Transform projectile;
+    public Transform shootLoc1;
+    public Transform shootLoc2;
+    public float timeBeforeShoot;
 
-	public GameObject[] waypoints;
+    public GameObject[] waypoints;
     
 	int currentWaypoint;
 
@@ -19,7 +23,26 @@ public class Waypoint : MonoBehaviour {
         player = GameObject.FindObjectOfType<PlayerInput>().transform;
 		currentWaypoint = 0;
         normalSpeed = speed;
+        StartCoroutine(Shoot());
 	}
+
+    IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(timeBeforeShoot);
+        for (; ; )
+        {
+            yield return new WaitForSeconds(Random.Range(2.0f, 8.0f));
+            int chance = Random.Range(1, 3);
+            if (chance == 1)
+            {
+                Instantiate(projectile, shootLoc1.position, shootLoc1.rotation);
+            }
+            else
+            {
+                Instantiate(projectile, shootLoc2.position, shootLoc2.rotation);
+            }
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
