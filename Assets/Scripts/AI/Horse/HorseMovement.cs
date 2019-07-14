@@ -173,7 +173,7 @@ public class HorseMovement : MonoBehaviour
     {
         playerRiding = true;
         player.GetComponent<PlayerCurrentHorse>().currentHorse = transform;
-        this.transform.GetChild(5).gameObject.SetActive(false);
+        //this.transform.GetChild(5).gameObject.SetActive(false);
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Animator>().SetBool("Riding", true);
@@ -189,7 +189,7 @@ public class HorseMovement : MonoBehaviour
     {
         playerRiding = false;
         player.GetComponent<PlayerCurrentHorse>().currentHorse = null;
-        this.transform.GetChild(5).gameObject.SetActive(true);
+        //this.transform.GetChild(5).gameObject.SetActive(true);
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<Animator>().SetBool("Riding", false);

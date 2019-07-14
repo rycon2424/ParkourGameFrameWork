@@ -58,6 +58,9 @@ public class DisplayText : MonoBehaviour
             quest.text = newQuest;
             //Play new quest sound
         }
-        GameObject.FindObjectOfType<PlayerController>().enabled = true;
+        if (GameObject.FindObjectOfType<PlayerCurrentHorse>().currentHorse == null)
+        {
+            GameObject.FindObjectOfType<PlayerController>().enabled = true;
+        }
     }
 }
