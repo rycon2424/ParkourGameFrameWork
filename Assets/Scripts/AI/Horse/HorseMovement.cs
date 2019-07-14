@@ -33,7 +33,7 @@ public class HorseMovement : MonoBehaviour
     void Awake()
     {
         health = maxHP;
-        player = GameObject.FindObjectOfType<PlayerController>().gameObject;
+        player = GameObject.FindObjectOfType<PlayerInput>().gameObject;
         cc = GameObject.FindObjectOfType<CameraController>();
         pi = GameObject.FindObjectOfType<PlayerInput>();
         ps = GameObject.FindObjectOfType<PlayerStats>();
@@ -43,7 +43,7 @@ public class HorseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (forcedRiding)
+        if (forcedRiding && playerRiding)
         {
             transform.Translate(Vector3.forward * (speed * 6) * Time.deltaTime);
             anim.SetBool("Idle", false);
@@ -89,7 +89,6 @@ public class HorseMovement : MonoBehaviour
     {
         if (ps.Health <= 0)
         {
-            forcedRiding = true;
             Invoke("ExitHorse", 1.5f);
         }
     }

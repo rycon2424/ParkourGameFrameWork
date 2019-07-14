@@ -51,7 +51,7 @@ public class Waypoint : MonoBehaviour {
         else if (Vector3.Distance(transform.position, player.position) < 15)
         {
             Debug.Log("Player is too Close");
-            speed = speed * 1.3f;
+            speed = normalSpeed * 1.4f;
         }
         else
         {
