@@ -42,7 +42,7 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: 7dd1bbb10bf56914d99730c9ed86bd29, type: 3}
+  - logo: {fileID: 21300000, guid: 040f1599a61ed45ac8d7825b20b5fcf4, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -122,7 +122,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.0
+  bundleVersion: 3.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -260,7 +260,7 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: ae721a2701d1a134396281de6efaa2d9,
+  resolutionDialogBanner: {fileID: 2800000, guid: 37600850d68f6f94a8dd003c00014f67,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 

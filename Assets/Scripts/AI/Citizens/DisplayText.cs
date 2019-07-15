@@ -10,6 +10,7 @@ public class DisplayText : MonoBehaviour
 
     [Header("Quest")]
     public Text quest;
+    public AudioSource aso;
 
     [Header("Conversations")]
     public GameObject talkBar;
@@ -56,7 +57,7 @@ public class DisplayText : MonoBehaviour
         if (updateQuest == true)
         {
             quest.text = newQuest;
-            //Play new quest sound
+            aso.Play();
         }
         if (GameObject.FindObjectOfType<PlayerCurrentHorse>().currentHorse == null)
         {

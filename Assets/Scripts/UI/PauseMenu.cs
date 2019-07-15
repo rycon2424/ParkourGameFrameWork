@@ -9,7 +9,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject mainmenu;
     public GameObject optionsmenu;
     public Slider sensitivity;
-
+    public Slider audioVolume;
+    
     private CameraController cc;
     bool openMenu = false;
     float oldTimeScale;
@@ -18,6 +19,7 @@ public class PauseMenu : MonoBehaviour
     {
         cc = GameObject.FindObjectOfType<CameraController>();
         sensitivity.value = cc.rotationSpeed;
+        audioVolume.value = AudioListener.volume;
     }
 
     void Update()
@@ -71,5 +73,10 @@ public class PauseMenu : MonoBehaviour
     {
         cc.rotationSpeed = sensitivity.value;
     }
-    
+
+    public void ChangeAudio()
+    {
+        AudioListener.volume = audioVolume.value;
+    }
+
 }
