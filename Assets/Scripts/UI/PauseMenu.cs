@@ -10,7 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsmenu;
     public Slider sensitivity;
     public Slider audioVolume;
-    
+    public static float sensitivitySave = 120;
+
     private CameraController cc;
     bool openMenu = false;
     float oldTimeScale;
@@ -18,7 +19,8 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         cc = GameObject.FindObjectOfType<CameraController>();
-        sensitivity.value = cc.rotationSpeed;
+        cc.rotationSpeed = sensitivitySave;
+        sensitivity.value = sensitivitySave;
         audioVolume.value = AudioListener.volume;
     }
 
@@ -71,7 +73,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangeSensitivity()
     {
-        cc.rotationSpeed = sensitivity.value;
+        sensitivitySave = sensitivity.value;
+        cc.rotationSpeed = sensitivitySave;
     }
 
     public void ChangeAudio()

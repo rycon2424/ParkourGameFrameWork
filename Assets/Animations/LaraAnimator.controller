@@ -517,7 +517,7 @@ BlendTree:
   m_Name: GroundBlend
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ec83b63618071894dba55bb4183450c0, type: 3}
+    m_Motion: {fileID: 7400000, guid: 31980fcbbe83b5049b83ccc8341b71c9, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1.25
@@ -4827,9 +4827,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.2
+  m_TransitionDuration: 0.285
   m_TransitionOffset: 0
-  m_ExitTime: 0.3
+  m_ExitTime: 0.0000000064710926
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -8268,9 +8268,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.2
+  m_TransitionDuration: 0.37659892
   m_TransitionOffset: 0
-  m_ExitTime: 0.8
+  m_ExitTime: 0.6234011
   m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 2
