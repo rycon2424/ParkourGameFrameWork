@@ -71,7 +71,7 @@ public class Jumping : StateBase<PlayerController>
             player.RotateToVelocityGround();
         }
 
-        if (Input.GetKey(player.Inputf.crouch) && !hasJumped)
+        if (Input.GetKey(player.Inputf.dive) && !isDive)
         {
             player.Anim.SetBool("isDive", true);
             isDive = true;

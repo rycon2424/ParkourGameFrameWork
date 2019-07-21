@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     public string horizontalAxis = "Horizontal";
     public string verticalAxis = "Vertical";
+    public KeyCode dive = KeyCode.Q;
     public KeyCode action = KeyCode.E;
     public KeyCode jump = KeyCode.Space;
     public KeyCode walk = KeyCode.LeftAlt;
