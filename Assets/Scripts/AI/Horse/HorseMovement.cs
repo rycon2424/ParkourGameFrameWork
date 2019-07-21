@@ -197,6 +197,7 @@ public class HorseMovement : MonoBehaviour
         anim.SetBool("Idle", true);
         anim.SetBool("Run", false);
         anim.SetBool("Walk", false);
+        postEffect.SetActive(false);
         Invoke("ResetAnim", 1f);
         //cc.Target = player.transform;
     }
@@ -206,6 +207,7 @@ public class HorseMovement : MonoBehaviour
         anim.SetBool("Idle", true);
         anim.SetBool("Run", false);
         anim.SetBool("Walk", false);
+        postEffect.SetActive(false);
     }
 
     bool canExit = false;
