@@ -5,6 +5,7 @@ using UnityEngine;
 public class TalkAble : MonoBehaviour
 {
     public bool convo;
+    public bool playThoughtOnActivation;
     public string charName;
     public string textToSay;
 
@@ -32,6 +33,10 @@ public class TalkAble : MonoBehaviour
         if (convo)
         {
             questLogo.SetActive(false);
+        }
+        if (playThoughtOnActivation)
+        {
+            Thought();
         }
     }
 
@@ -67,15 +72,7 @@ public class TalkAble : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                dt.Thought(textToSay, updateQuest, newQuest);
-                if (activateSomething)
-                {
-                    Invoke("CheckEnable", eDelay);
-                }
-                if (disableSomething)
-                {
-                    Invoke("CheckDisable", dDelay);
-                }
+                Thought();
             }
         }
     }
@@ -86,6 +83,19 @@ public class TalkAble : MonoBehaviour
         {
             inTalkRange = false;
             questLogo.SetActive(false);
+        }
+    }
+
+    public void Thought()
+    {
+        dt.Thought(textToSay, updateQuest, newQuest);
+        if (activateSomething)
+        {
+            Invoke("CheckEnable", eDelay);
+        }
+        if (disableSomething)
+        {
+            Invoke("CheckDisable", dDelay);
         }
     }
 

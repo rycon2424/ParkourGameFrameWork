@@ -52,7 +52,7 @@ public class DisplayText : MonoBehaviour
             t.text = currentText;
             yield return new WaitForSeconds(delay);
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         g.SetActive(false);
         if (updateQuest == true)
         {

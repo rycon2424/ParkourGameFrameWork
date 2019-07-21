@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisableAndEnableTrigger : MonoBehaviour
 {
-    public enum DisableEnable { disableAndEnable, disableOnly, enableOnly , disable1XAndEnable2X, disable2XAndEnable1X }
+    public enum DisableEnable { disableAndEnable, disableOnly, enableOnly , disable1XAndEnable2X, disable2XAndEnable1X , disable2X, enable2X}
     [Header("Basic")]
     public DisableEnable deType;
     public GameObject toDisable;
@@ -49,6 +49,14 @@ public class DisableAndEnableTrigger : MonoBehaviour
                     toDisableX2.SetActive(false);
                     toEnable.SetActive(true);
                     break;
+                case DisableEnable.disable2X:
+                    toDisable.SetActive(false);
+                    toDisableX2.SetActive(false);
+                    break;
+                case DisableEnable.enable2X:
+                    toEnable.SetActive(false);
+                    toEnableX2.SetActive(false);
+                    break;
                 default:
                     break;
             }
@@ -79,6 +87,14 @@ public class DisableAndEnableTrigger : MonoBehaviour
                 toDisable.SetActive(false);
                 toDisableX2.SetActive(false);
                 toEnable.SetActive(true);
+                break;
+            case DisableEnable.disable2X:
+                toDisable.SetActive(false);
+                toDisableX2.SetActive(false);
+                break;
+            case DisableEnable.enable2X:
+                toEnable.SetActive(false);
+                toEnableX2.SetActive(false);
                 break;
             default:
                 break;
