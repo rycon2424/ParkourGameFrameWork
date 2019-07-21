@@ -53,12 +53,12 @@ public class HorseMovement : MonoBehaviour
             {
                 Jump();
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) && canJump)
             {
                 transform.Rotate(Vector3.up * (-rotateSpeed) * Time.deltaTime);
                 transform.Translate(-transform.right * (speed) * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) && canJump)
             {
                 transform.Rotate(Vector3.up * (rotateSpeed) * Time.deltaTime);
                 transform.Translate(transform.right * (speed) * Time.deltaTime);
@@ -123,11 +123,11 @@ public class HorseMovement : MonoBehaviour
                 anim.SetBool("Run", false);
                 anim.SetBool("Walk", true);
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) && canJump)
             {
                 transform.Rotate(Vector3.up * -rotateSpeed * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) && canJump)
             {
                 transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
             }
