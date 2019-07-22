@@ -5,6 +5,8 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
 
+    public bool grabAble;
+
     private PlayerController pc;
     private PlayerInput pi;
     private Animator anim;
@@ -31,10 +33,10 @@ public class Box : MonoBehaviour
         {
             ExitBox();
         }
-        /*if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(pi.action) && !playerLocked && grabAble && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            CheckFace();
-        }*/
+            EnterBox();
+        }
     }
 
     RaycastHit hitForward;
@@ -93,21 +95,13 @@ public class Box : MonoBehaviour
         }
     }
     
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(pi.action) && !playerLocked && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            if (!playerLocked)
             {
-                Debug.Log("EnterBox");
-                CheckFace();
-                transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
-                //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, playerOffset);
-                anim.SetFloat("Speed", 0);
-                anim.SetBool("PushBox", true);
-                pc.enabled = false;
-                gameObject.layer = 2;
-                Invoke("LockPlayer", 0.5f);
+                grabAble = true;
             }
         }
     }
@@ -115,8 +109,24 @@ public class Box : MonoBehaviour
     void OnTriggerExit(Collider col)
     {
         ExitBox();
+        if (col.gameObject.CompareTag("Player"))
+        {
+           grabAble = false;
+        }
     }
 
+    void EnterBox()
+    {
+        CheckFace();
+        transform.parent = GameObject.FindObjectOfType<PlayerController>().transform;
+        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, playerOffset);
+        anim.SetFloat("Speed", 0);
+        anim.SetBool("PushBox", true);
+        pc.enabled = false;
+        gameObject.layer = 2;
+        Invoke("LockPlayer", 0.5f);
+    }
+    
     public void ExitBox()
     {
         if (playerLocked)
@@ -127,6 +137,7 @@ public class Box : MonoBehaviour
             pc.enabled = true;
             playerLocked = false;
             anim.applyRootMotion = true;
+            grabAble = false;
         }
     }
 
