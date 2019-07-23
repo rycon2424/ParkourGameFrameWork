@@ -7,6 +7,8 @@ public class PortalTeleporter : MonoBehaviour {
 	public Transform player;
 	public Transform reciever;
 
+    public static bool cooldown;
+
 	private bool playerIsOverlapping = false;
 
 	// Update is called once per frame
@@ -28,16 +30,26 @@ public class PortalTeleporter : MonoBehaviour {
 				player.position = reciever.position + positionOffset;
 
 				playerIsOverlapping = false;
+                cooldown = true;
+                Invoke("Cooldown", 1);
 			}
 		}
 	}
 
+    void Cooldown()
+    {
+        cooldown = false;
+    }
+
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.tag == "Player")
-		{
-			playerIsOverlapping = true;
-		}
+        if (cooldown == false)
+        {
+            if (other.tag == "Player")
+            {
+                playerIsOverlapping = true;
+            }
+        }
 	}
 
 	void OnTriggerExit (Collider other)
