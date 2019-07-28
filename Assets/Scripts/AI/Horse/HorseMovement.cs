@@ -49,6 +49,7 @@ public class HorseMovement : MonoBehaviour
             anim.SetBool("Idle", false);
             anim.SetBool("Run", true);
             anim.SetBool("Walk", false);
+            postEffect.SetActive(true);
             if (Input.GetKeyDown(pi.jump) && canJump)
             {
                 Jump();
