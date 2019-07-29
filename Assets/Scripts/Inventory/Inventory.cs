@@ -105,6 +105,12 @@ public class Inventory : MonoBehaviour
 
     public void UpdateInfo()
     {
+        if (inventoryItem.Count < 1)
+        {
+            removeButton.interactable = false;
+            useAbleButton.interactable = false;
+            return;
+        }
         description.text = inventoryItem[selectedItem].GetComponent<InventoryItem>().description;
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().useAble == true)
         {
