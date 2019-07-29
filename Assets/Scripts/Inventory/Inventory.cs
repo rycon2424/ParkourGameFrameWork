@@ -12,10 +12,12 @@ public class Inventory : MonoBehaviour
 
     private PlayerInput pi;
     private bool canvasOpen;
+    private PlayerController playerRef;
 
     private void Start()
     {
         pi = GameObject.FindObjectOfType<PlayerInput>();
+        playerRef = pi.gameObject.GetComponent<PlayerController>();
         UpdateInventory();
         useAbleButton.interactable = false;
         removeButton.interactable = false;
@@ -132,6 +134,10 @@ public class Inventory : MonoBehaviour
     
     public void UseItem()
     {
+        if (inventoryItem[selectedItem].GetComponent<InventoryItem>().isTorch == true)
+        {
+            playerRef.Anim.SetBool("Torch", true);
+        }
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().destroyOnUse == true)
         {
             inventoryItem.Remove(inventoryItem[selectedItem]);
