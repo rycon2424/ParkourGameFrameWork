@@ -144,6 +144,7 @@ public class PlayerController : MonoBehaviour
         stateMachine.AddState(new AutoGrabbing());
         stateMachine.AddState(new MonkeySwing());
         stateMachine.AddState(new Sliding());
+        stateMachine.AddState(new Torch());
 
         upperStateMachine.AddState(new Empty());
 

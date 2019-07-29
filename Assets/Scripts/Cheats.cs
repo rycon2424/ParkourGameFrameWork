@@ -11,9 +11,14 @@ public class Cheats : MonoBehaviour
     public bool usingTimeCheats = false;
     public float timeSpeed;
     public GameObject defaultDance;
+    public bool muteAllAudio;
     
     void Update()
     {
+        if (muteAllAudio)
+        {
+            AudioListener.volume = 0;
+        }
         if (usingTimeCheats)
         {
             Time.timeScale = timeSpeed;

@@ -136,7 +136,9 @@ public class Inventory : MonoBehaviour
     {
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().isTorch == true)
         {
-            playerRef.Anim.SetBool("Torch", true);
+            Debug.Log("Try to start State");
+            playerRef.StopMoving();
+            playerRef.StateMachine.GoToState<Torch>();
         }
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().destroyOnUse == true)
         {
