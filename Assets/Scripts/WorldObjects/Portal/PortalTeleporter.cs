@@ -31,7 +31,7 @@ public class PortalTeleporter : MonoBehaviour {
 
 				playerIsOverlapping = false;
                 cooldown = true;
-                Invoke("Cooldown", 1);
+                Invoke("Cooldown", 2);
 			}
 		}
 	}
