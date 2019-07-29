@@ -285,7 +285,7 @@ MonoBehaviour:
   mouseControl: 1
   rotationSpeed: 120
   pitchMax: 80
-  pitchMin: -45
+  pitchMin: -35
   rotationSmoothing: 18
   translationSmoothing: 10
   turnRate: 120

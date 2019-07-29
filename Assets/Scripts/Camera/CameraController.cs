@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float pitchMax = 80.0f;  // Max angle cam can be at
     [SerializeField] private float pitchMin = -45.0f;  // Smallest angle cam can be at
     [SerializeField] private float rotationSmoothing = 18f; 
-    [SerializeField] private float translationSmoothing = 10f;
+    public float translationSmoothing = 10f;
     [SerializeField] private float turnRate = 120f; // Rate at which horizontal axis causes LAU turning
     [SerializeField] private float verticalTurnInfluence = 60f; // Vertical axis influence on said turning
     [SerializeField] private string mouseX = "Mouse X";
