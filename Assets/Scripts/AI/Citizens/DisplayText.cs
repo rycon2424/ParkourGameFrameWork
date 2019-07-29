@@ -59,9 +59,6 @@ public class DisplayText : MonoBehaviour
             quest.text = newQuest;
             aso.Play();
         }
-        if (GameObject.FindObjectOfType<PlayerCurrentHorse>().currentHorse == null)
-        {
-            GameObject.FindObjectOfType<PlayerController>().enabled = true;
-        }
+        GameObject.FindObjectOfType<PlayerController>().enabled = true;
     }
 }
