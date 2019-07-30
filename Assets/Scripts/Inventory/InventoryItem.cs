@@ -17,7 +17,8 @@ public class InventoryItem : MonoBehaviour
     public bool discardAble;
 
     [Header("ItemType")]
-    public bool isTorch;
+    public Type type;
+    public enum Type { torch, healthkit, NAN}
 
     [Header("Description")]
     public string description;

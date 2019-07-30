@@ -136,10 +136,21 @@ public class Inventory : MonoBehaviour
     
     public void UseItem()
     {
-        if (inventoryItem[selectedItem].GetComponent<InventoryItem>().isTorch == true)
+        switch (inventoryItem[selectedItem].GetComponent<InventoryItem>().type)
         {
-            playerRef.StopMoving();
-            playerRef.StateMachine.GoToState<Torch>();
+            case InventoryItem.Type.torch:
+                playerRef.StopMoving();
+                playerRef.StateMachine.GoToState<Torch>();
+                break;
+
+            case InventoryItem.Type.healthkit:
+                break;
+
+            case InventoryItem.Type.NAN:
+                break;
+
+            default:
+                break;
         }
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().destroyOnUse == true)
         {
