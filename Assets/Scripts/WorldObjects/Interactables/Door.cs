@@ -6,10 +6,48 @@ public class Door : Interactable
 {
     [SerializeField]
     private bool pull = true;
+    [SerializeField]
+    private bool usePlayerAnim;
+    [SerializeField]
+    private bool needsKey = true;
+    [SerializeField]
+    private int keycode;
+
+    private Inventory iv;
+
+    void Start()
+    {
+        iv = GameObject.FindObjectOfType<Inventory>();
+    }
 
     public override void Interact(PlayerController player)
     {
         base.Interact(player);
+
+        if (needsKey)
+        {
+            if (iv.inventoryItem.Count.Equals(0))
+            {
+                iv.Opendoor(false, "");
+                return;
+            }
+            for (int i = 0; i < iv.inventoryItem.Count; i++)
+            {
+                if (iv.inventoryItem[i].GetComponent<Pickup>().keyNumber == keycode)
+                {
+                    iv.Opendoor(true, iv.inventoryItem[i].GetComponent<Pickup>().nameObject);
+                    if (iv.inventoryItem[i].GetComponent<Pickup>().destroyOnUse == true)
+                    {
+                        iv.inventoryItem.Remove(iv.inventoryItem[i]);
+                    }
+                }
+                else
+                {
+                    iv.Opendoor(false, "");
+                    return;
+                }
+            }
+        }
 
         if (!player.StateMachine.IsInState<Locomotion>())
             return;
@@ -19,10 +57,13 @@ public class Door : Interactable
 
     public IEnumerator OpenDoor(PlayerController player)
     {
-        Vector3 playerTargetPos = transform.position - transform.right * (pull ? 1f : 0.75f) - transform.forward * 0.4f;
+        if (usePlayerAnim)
+        {
+            Vector3 playerTargetPos = transform.position - transform.right * (pull ? 1f : 0.75f) - transform.forward * 0.4f;
 
-        player.MoveWait(playerTargetPos, Quaternion.LookRotation(transform.forward), player.WalkSpeed, 16f);
-        player.Anim.SetTrigger(pull ? "PullDoorLeft" : "PushDoorLeft");
+            player.MoveWait(playerTargetPos, Quaternion.LookRotation(transform.forward), player.WalkSpeed, 16f);
+            player.Anim.SetTrigger(pull ? "PullDoorLeft" : "PushDoorLeft");
+        }
 
         Trigger();
 

@@ -155,13 +155,31 @@ public class Inventory : MonoBehaviour
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().destroyOnUse == true)
         {
             inventoryItem.Remove(inventoryItem[selectedItem]);
-            Debug.Log("used and destroyed " + selectedItem);
-        }
-        else
-        {
-            Debug.Log("used but not destroyed");
         }
         SelectedItem(selectedItem = selectedItem - 1);
+    }
+
+    public GameObject doorInfo;
+    public Text infoDoorText;
+
+    public void Opendoor(bool hasRightKey, string itemName)
+    {
+        Debug.Log(hasRightKey + " " + itemName);
+        doorInfo.SetActive(true);
+        if (hasRightKey == true)
+        {
+            infoDoorText.text = "Used " + itemName + " to unlock the door";
+        }
+        else if (hasRightKey == false)
+        {
+            infoDoorText.text = "It's Locked";
+        }
+        Invoke("HideDoorInfo", 2);
+    }
+
+    void HideDoorInfo()
+    {
+        doorInfo.SetActive(false);
     }
 
 }
