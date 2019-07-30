@@ -11,7 +11,10 @@ public class Torch : StateBase<PlayerController>
     public override void OnEnter(PlayerController player)
     {
         Debug.Log("Succesfully entered the Torch State");
+        player.GroundedOnSteps = true;
         player.Anim.SetBool("Torch", true);
+        player.UseRootMotion = true;
+        isRootMotion = false;
     }
 
     public override void OnExit(PlayerController player)
@@ -29,8 +32,6 @@ public class Torch : StateBase<PlayerController>
             player.StateMachine.GoToState<Locomotion>();
             return;
         }
-        /*AnimatorStateInfo animState = player.Anim.GetCurrentAnimatorStateInfo(0);
-        AnimatorTransitionInfo transInfo = player.Anim.GetAnimatorTransitionInfo(0);
 
         if (player.IsMovingAuto)
             return;
@@ -47,23 +48,6 @@ public class Torch : StateBase<PlayerController>
             player.StateMachine.GoToState<Sliding>();
             return;
         }
-
-        if (isStairs = (player.Ground.Distance < 1f && player.Ground.Tag == "Stairs"))
-        {
-            player.Anim.SetBool("isStairs", true);
-
-            RaycastHit hit;
-            if (Physics.Raycast(player.transform.position + player.transform.forward * 0.2f + 0.2f * Vector3.up,
-                Vector3.down, out hit, 1f))
-            {
-                player.Anim.SetFloat("Stairs", hit.point.y < player.transform.position.y ? -1f : 1f, 0.1f, Time.deltaTime);
-            }
-        }
-        else
-        {
-            player.Anim.SetBool("isStairs", false);
-            player.Anim.SetFloat("Stairs", 0f, 0.1f, Time.deltaTime);
-        }*/
 
         float speed = Input.GetKey(player.Inputf.walk) ? player.WalkSpeed : player.RunSpeed;
 

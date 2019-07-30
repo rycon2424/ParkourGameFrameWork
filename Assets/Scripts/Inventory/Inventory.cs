@@ -49,6 +49,7 @@ public class Inventory : MonoBehaviour
         {
             inventoryCanvas.SetActive(true);
             UpdateInventory();
+            UpdateInfo();
             Time.timeScale = 0.1f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -114,7 +115,8 @@ public class Inventory : MonoBehaviour
             return;
         }
         description.text = inventoryItem[selectedItem].GetComponent<InventoryItem>().description;
-        if (inventoryItem[selectedItem].GetComponent<InventoryItem>().useAble == true)
+        AnimatorStateInfo animState = playerRef.Anim.GetCurrentAnimatorStateInfo(0);
+        if (inventoryItem[selectedItem].GetComponent<InventoryItem>().useAble == true && animState.IsName("Idle"))
         {
             useAbleButton.interactable = true;
         }
@@ -136,7 +138,6 @@ public class Inventory : MonoBehaviour
     {
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().isTorch == true)
         {
-            Debug.Log("Try to start State");
             playerRef.StopMoving();
             playerRef.StateMachine.GoToState<Torch>();
         }

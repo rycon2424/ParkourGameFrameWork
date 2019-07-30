@@ -4844,7 +4844,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameObject: Torch
+  keyNumber: -1
   durability: 100
-  destroyOnUse: 0
-  description: Used to show light
+  useAble: 1
+  destroyOnUse: 1
+  discardAble: 1
+  isTorch: 1
+  description: To see more in the dark (must strand still to equip)
   iv: {fileID: 0}
