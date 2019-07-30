@@ -106,6 +106,17 @@ public class Box : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            if (!playerLocked)
+            {
+                grabAble = true;
+            }
+        }
+    }
+
     void OnTriggerExit(Collider col)
     {
         ExitBox();
