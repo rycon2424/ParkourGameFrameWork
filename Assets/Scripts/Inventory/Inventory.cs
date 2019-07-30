@@ -88,6 +88,7 @@ public class Inventory : MonoBehaviour
     }
 
     public Text description;
+    public Text durablity;
     public Button useAbleButton;
     public Button removeButton;
 
@@ -113,6 +114,14 @@ public class Inventory : MonoBehaviour
             return;
         }
         description.text = inventoryItem[selectedItem].GetComponent<InventoryItem>().description;
+        if (inventoryItem[selectedItem].GetComponent<InventoryItem>().durability == -1)
+        {
+            durablity.text = "∞";
+        }
+        else
+        {
+            durablity.text = inventoryItem[selectedItem].GetComponent<InventoryItem>().durability + "%";
+        }
         AnimatorStateInfo animState = playerRef.Anim.GetCurrentAnimatorStateInfo(0);
         if (inventoryItem[selectedItem].GetComponent<InventoryItem>().useAble == true && animState.IsName("Idle"))
         {
