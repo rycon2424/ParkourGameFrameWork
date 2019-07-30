@@ -31,6 +31,35 @@ public class Inventory : MonoBehaviour
             canvasOpen = !canvasOpen;
             ShowHideInventory();
         }
+        if (Input.GetKeyDown(playerRef.Inputf.lightSource) && GAME_OVER.gameOver == false)
+        {
+            UseTorch();
+        }
+    }
+
+    public void UseTorch()
+    {
+        AnimatorStateInfo animState = playerRef.Anim.GetCurrentAnimatorStateInfo(0);
+        if (animState.IsName("Idle"))
+        {
+            if (inventoryItem.Count.Equals(0))
+            {
+                return;
+            }
+            for (int i = 0; i < inventoryItem.Count; i++)
+            {
+                if (inventoryItem[i].GetComponent<Pickup>().type == InventoryItem.Type.torch)
+                {
+                    if (inventoryItem[i].GetComponent<Pickup>().destroyOnUse == true)
+                    {
+                        inventoryItem.Remove(inventoryItem[i]);
+                    }
+                    playerRef.StopMoving();
+                    playerRef.StateMachine.GoToState<Torch>();
+                    return;
+                }
+            }
+        }
     }
 
     public void HideInventory()
@@ -111,6 +140,8 @@ public class Inventory : MonoBehaviour
         {
             removeButton.interactable = false;
             useAbleButton.interactable = false;
+            durablity.text = "/////";
+            description.text = "...";
             return;
         }
         description.text = inventoryItem[selectedItem].GetComponent<InventoryItem>().description;
