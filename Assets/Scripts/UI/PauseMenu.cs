@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     private CameraController cc;
     bool openMenu = false;
+    public static bool blockInventory;
     float oldTimeScale;
 
     void Start()
@@ -26,6 +27,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        blockInventory = openMenu;
         if (GAME_OVER.gameOver == false && GAME_OVER.canPause == true)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && openMenu == false)

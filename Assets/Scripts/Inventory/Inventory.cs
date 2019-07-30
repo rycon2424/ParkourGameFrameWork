@@ -26,13 +26,11 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(pi.inventory) && GAME_OVER.gameOver == false)
+        if (Input.GetKeyDown(pi.inventory) && GAME_OVER.gameOver == false && PauseMenu.blockInventory == false)
         {
             canvasOpen = !canvasOpen;
             ShowHideInventory();
         }
-
-        //buttons[selectedItem].GetComponent<Image>().color = Color.blue;
     }
 
     public void HideInventory()
