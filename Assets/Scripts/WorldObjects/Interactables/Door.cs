@@ -24,11 +24,15 @@ public class Door : Interactable
     {
         base.Interact(player);
 
+        if (!player.StateMachine.IsInState<Locomotion>())
+            return;
+
         if (needsKey)
         {
             if (iv.inventoryItem.Count.Equals(0))
             {
                 iv.Opendoor(false, "");
+                Debug.Log("inventory is empty return");
                 return;
             }
             for (int i = 0; i < iv.inventoryItem.Count; i++)
@@ -36,23 +40,22 @@ public class Door : Interactable
                 if (iv.inventoryItem[i].GetComponent<Pickup>().keyNumber == keycode)
                 {
                     iv.Opendoor(true, iv.inventoryItem[i].GetComponent<Pickup>().nameObject);
+                    Debug.Log("Got the right key");
                     if (iv.inventoryItem[i].GetComponent<Pickup>().destroyOnUse == true)
                     {
                         iv.inventoryItem.Remove(iv.inventoryItem[i]);
                     }
+                    StartCoroutine(OpenDoor(player));
+                    return;
                 }
                 else
                 {
-                    iv.Opendoor(false, "");
-                    return;
+                    Debug.Log(iv.inventoryItem[i].GetComponent<Pickup>().nameObject + " is not the right key");
                 }
             }
         }
-
-        if (!player.StateMachine.IsInState<Locomotion>())
-            return;
-
-        StartCoroutine(OpenDoor(player));
+        iv.Opendoor(false, "");
+        Debug.Log("Player has not the right key");
     }
 
     public IEnumerator OpenDoor(PlayerController player)
