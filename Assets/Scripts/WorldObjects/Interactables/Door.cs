@@ -13,6 +13,9 @@ public class Door : Interactable
     [SerializeField]
     private int keycode;
 
+    [Header("Doesnt open box collider")]
+    public BoxCollider doesntOpenFromThisSide;
+
     private Inventory iv;
 
     void Start()
@@ -45,6 +48,7 @@ public class Door : Interactable
                     {
                         iv.inventoryItem.Remove(iv.inventoryItem[i]);
                     }
+                    doesntOpenFromThisSide.enabled = false;
                     StartCoroutine(OpenDoor(player));
                     return;
                 }

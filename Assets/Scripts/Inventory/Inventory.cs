@@ -215,6 +215,13 @@ public class Inventory : MonoBehaviour
         Invoke("HideDoorInfo", 2);
     }
 
+    public void DoesNotOpenFromThisSide()
+    {
+        doorInfo.SetActive(true);
+        infoDoorText.text = "Does not open from this side";
+        Invoke("HideDoorInfo", 2);
+    }
+
     void HideDoorInfo()
     {
         doorInfo.SetActive(false);
