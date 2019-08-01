@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door : Interactable
 {
     [SerializeField]
+    private bool isDoor;
+    [SerializeField]
     private bool pull = true;
     [SerializeField]
     private bool usePlayerAnim;
@@ -48,7 +50,10 @@ public class Door : Interactable
                     {
                         iv.inventoryItem.Remove(iv.inventoryItem[i]);
                     }
-                    doesntOpenFromThisSide.enabled = false;
+                    if (isDoor)
+                    {
+                        doesntOpenFromThisSide.enabled = false;
+                    }
                     StartCoroutine(OpenDoor(player));
                     return;
                 }
