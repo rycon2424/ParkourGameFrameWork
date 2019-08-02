@@ -126,7 +126,7 @@ public class BasicCitizenBehaviour : MonoBehaviour
 
                 //Checks if the selected destination is the last one or already in use, if so it will randomly choose another destination till
                 //the destination is not the last and not in use
-                while (selectedDestination == lastDestination || DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed/* || thisAgent.SetDestination(DestinationPoints[selectedDestination].transform.position) == false*/)
+                while (selectedDestination == lastDestination || DestinationPoints[selectedDestination].GetComponent<DestinationPointScript>().isUsed)
                 {
                     selectedDestination = Random.Range(0, DestinationPoints.Count);
                 }
