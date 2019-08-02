@@ -21,15 +21,15 @@ public class DisplayText : MonoBehaviour
     public GameObject thoughtBar;
     public Text textThought;
 
-    public void Conversation(string name ,string f, bool updateQuest, string newQuest)
+    public void Conversation(string name ,string text, bool updateQuest, string newQuest)
     {
         nameBar.text = name;
-        StartCoroutine(ShowText(f, textConv, talkBar, false, updateQuest, newQuest));
+        StartCoroutine(ShowText(text, textConv, talkBar, false, updateQuest, newQuest));
     }
 
-    public void Thought(string f, bool updateQuest, string newQuest)
+    public void Thought(string text, bool updateQuest, string newQuest)
     {
-        StartCoroutine(ShowText(f, textThought, thoughtBar, true, updateQuest, newQuest));
+        StartCoroutine(ShowText(text, textThought, thoughtBar, true, updateQuest, newQuest));
     }
 
     public void UpdateQuest(string new_quest_text)
