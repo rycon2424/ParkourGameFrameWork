@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtZone : MonoBehaviour
 {
     public int amount = 1;
+    public int timeBetweenDamage;
 
     private PlayerStats stats;
     private HorseMovement hm;
@@ -23,14 +24,24 @@ public class HurtZone : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && canTakeDamage)
         {
             stats.Health -= amount;
+            StartCoroutine(Cooldown());
         }
-        if (other.CompareTag("Horse"))
+        if (other.CompareTag("Horse") && canTakeDamage)
         {
             hm.health -= 50;
+            StartCoroutine(Cooldown());
         }
+    }
+
+    bool canTakeDamage = true;
+    IEnumerator Cooldown()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(timeBetweenDamage);
+        canTakeDamage = true;
     }
 
     private void OnTriggerExit(Collider other)

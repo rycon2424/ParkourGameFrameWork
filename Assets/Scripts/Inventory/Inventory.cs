@@ -202,6 +202,7 @@ public class Inventory : MonoBehaviour
 
     public void Opendoor(bool hasRightKey, string itemName)
     {
+        StopCoroutine("HideDoorInfo");
         Debug.Log(hasRightKey + " " + itemName);
         doorInfo.SetActive(true);
         if (hasRightKey == true)
@@ -212,18 +213,20 @@ public class Inventory : MonoBehaviour
         {
             infoDoorText.text = "It's Locked";
         }
-        Invoke("HideDoorInfo", 2);
+        StartCoroutine("HideDoorInfo");
     }
 
     public void DoesNotOpenFromThisSide()
     {
+        StopCoroutine("HideDoorInfo");
         doorInfo.SetActive(true);
         infoDoorText.text = "Does not open from this side";
-        Invoke("HideDoorInfo", 2);
+        StartCoroutine("HideDoorInfo");
     }
 
-    void HideDoorInfo()
+    IEnumerator HideDoorInfo()
     {
+        yield return new WaitForSeconds(2f);
         doorInfo.SetActive(false);
     }
 
