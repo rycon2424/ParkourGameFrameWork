@@ -9,6 +9,7 @@ public class ExitGameOnTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Application.Quit();
+            Debug.Log("Exit Game");
         }
     }
 }
