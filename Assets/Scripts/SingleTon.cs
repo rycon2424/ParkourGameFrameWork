@@ -23,6 +23,21 @@ public class SingleTon : MonoBehaviour
         {
             instance = this;
         }
+
         DontDestroyOnLoad(this.gameObject);
+        
     }
+
+    public List<string> savedInventory = new List<string>();
+    
+    public void SaveInventory(string backup)
+    {
+        savedInventory.Add(backup);
+    }
+
+    public void ClearList()
+    {
+        savedInventory = new List<string>();
+    }
+
 }

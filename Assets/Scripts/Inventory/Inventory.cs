@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
     {
         pi = GameObject.FindObjectOfType<PlayerInput>();
         playerRef = pi.gameObject.GetComponent<PlayerController>();
+        ReloadInventory();
         UpdateInventory();
         useAbleButton.interactable = false;
         removeButton.interactable = false;
@@ -95,6 +96,7 @@ public class Inventory : MonoBehaviour
 
     public void UpdateInventory()
     {
+        SingleTon.Instance.ClearList();
         for (int i = 0; i < inventoryText.Length; i++)
         {
             if (i >= inventoryItem.Count)
@@ -106,6 +108,7 @@ public class Inventory : MonoBehaviour
             {
                 inventoryText[i].text = inventoryItem[i].GetComponent<InventoryItem>().nameObject;
                 buttons[i].interactable = true;
+                SingleTon.Instance.SaveInventory(inventoryItem[i].GetComponent<InventoryItem>().nameObject);
             }
         }
     }
@@ -228,6 +231,24 @@ public class Inventory : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         doorInfo.SetActive(false);
+    }
+
+    public void ReloadInventory()
+    {
+        List<Pickup> names = new List<Pickup>();
+        names.AddRange(GameObject.FindObjectsOfType<Pickup>());
+        List<string> backup = new List<string>();
+        backup.AddRange(SingleTon.Instance.savedInventory);
+        foreach (string itemName in backup)
+        {
+            foreach (Pickup pu in names)
+            {
+                if (pu.nameObject == itemName)
+                {
+                    pu.AddThisItem();
+                }
+            }
+        }
     }
 
 }

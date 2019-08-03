@@ -8,7 +8,7 @@ public class Pickup : InventoryItem
 
     private bool canPickup;
 
-    void Start()
+    void Awake()
     {
         iv = GameObject.FindObjectOfType<Inventory>();
     }
@@ -17,10 +17,15 @@ public class Pickup : InventoryItem
     {
         if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
-            iv.inventoryItem.Add(this.gameObject);
-            iv.UpdateInventory();
-            gameObject.SetActive(false);
+            AddThisItem();
         }
+    }
+
+    public void AddThisItem()
+    {
+        iv.inventoryItem.Add(gameObject);
+        iv.UpdateInventory();
+        gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider col)
