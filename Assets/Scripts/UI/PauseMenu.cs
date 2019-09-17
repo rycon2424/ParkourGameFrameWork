@@ -81,6 +81,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangeAudio()
     {
+        Debug.Log("AudioChanged");
         AudioListener.volume = audioVolume.value;
     }
 
